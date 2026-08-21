@@ -1,0 +1,7 @@
+{
+  "crons": [
+    { "path": "/api/cron/bot-import", "schedule": "0 5 * * *" },
+    { "path": "/api/cron/bot-import", "schedule": "0 7 * * *" },
+    { "path": "/api/cron/bot-import", "schedule": "0 9 * * *" }
+  ]
+}

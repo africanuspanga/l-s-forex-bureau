@@ -1,0 +1,58 @@
+import Link from "next/link";
+import type { CurrencyRate } from "@/lib/rates";
+import ExchangeCalculator from "@/components/ExchangeCalculator";
+
+interface HeroProps {
+  rates: CurrencyRate[];
+}
+
+export default function Hero({ rates }: HeroProps) {
+  return (
+    <section className="bg-hero-mesh pt-16">
+      <div className="mx-auto max-w-7xl px-4 pb-24 pt-14 sm:px-6 sm:pt-20 lg:px-8 lg:pb-28">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="animate-fade-up">
+            <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+              Foreign Exchange • Dar es Salaam
+            </span>
+            <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl">
+              Exchange Currency
+              <br />
+              <span className="text-accent">With Confidence.</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/75">
+              Get competitive foreign exchange rates and professional service at
+              L&amp;S Forex Bureau. Check today&apos;s rates online, then visit
+              your nearest L&amp;S branch to complete your exchange.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/rates"
+                className="rounded-full bg-accent px-6 py-3 text-center text-sm font-semibold text-primary-deep transition hover:bg-accent-soft"
+              >
+                View Today&apos;s Rates
+              </Link>
+              <Link
+                href="/branches"
+                className="rounded-full border border-white/10 bg-white/5 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Find a Branch
+              </Link>
+            </div>
+            <p className="mt-8 flex items-center gap-2 text-sm text-white/60">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="h-4 w-4 shrink-0 text-accent">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 21s7-5.1 7-11a7 7 0 10-14 0c0 5.9 7 11 7 11z" />
+                <circle cx="12" cy="10" r="2.5" />
+              </svg>
+              Tegeta • Mbezi Beach • Mikocheni • Masaki
+            </p>
+          </div>
+
+          <div className="animate-fade-up" style={{ animationDelay: "150ms" }}>
+            <ExchangeCalculator rates={rates} />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
