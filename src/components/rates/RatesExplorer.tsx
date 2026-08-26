@@ -56,7 +56,7 @@ export default function RatesExplorer({ rates }: { rates: CurrencyRate[] }) {
               type="button"
               onClick={() => setFilter(f.value)}
               aria-pressed={filter === f.value}
-              className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+              className={`rounded-lg px-4 py-2 text-sm font-semibold transition-colors ${
                 filter === f.value
                   ? "bg-primary text-white"
                   : "bg-white text-muted ring-1 ring-primary/15 hover:bg-surface-alt hover:text-foreground"
@@ -83,13 +83,13 @@ export default function RatesExplorer({ rates }: { rates: CurrencyRate[] }) {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search currency or code"
             aria-label="Search currencies"
-            className="w-full rounded-full bg-white py-2.5 pl-10 pr-4 text-sm text-foreground ring-1 ring-primary/15 placeholder:text-muted/70 focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full rounded-xl bg-white py-2.5 pl-10 pr-4 text-sm text-foreground ring-1 ring-primary/15 placeholder:text-muted/70 focus:outline-none focus:ring-2 focus:ring-primary"
           />
         </div>
       </div>
 
       {/* Desktop table */}
-      <div className="mt-6 hidden overflow-hidden rounded-2xl bg-white card-shadow md:block">
+      <div className="card mt-6 hidden overflow-hidden md:block">
         <table className="w-full text-left text-sm">
           <thead>
             <tr className="border-b border-primary/10 bg-surface text-xs font-semibold uppercase tracking-wider text-muted">
@@ -135,7 +135,7 @@ export default function RatesExplorer({ rates }: { rates: CurrencyRate[] }) {
       {/* Mobile cards */}
       <div className="mt-6 grid gap-4 md:hidden">
         {visible.map((r) => (
-          <div key={r.currency.code} className="rounded-2xl bg-white p-5 card-shadow">
+          <div key={r.currency.code} className="card p-5">
             <div className="flex items-center justify-between">
               <span className="flex items-center gap-2.5">
                 <span aria-hidden="true" className="text-2xl leading-none">
@@ -171,7 +171,7 @@ export default function RatesExplorer({ rates }: { rates: CurrencyRate[] }) {
           </div>
         ))}
         {visible.length === 0 && (
-          <p className="rounded-2xl bg-white px-6 py-12 text-center text-sm text-muted card-shadow">
+          <p className="card px-6 py-12 text-center text-sm text-muted">
             No currencies match your search.
           </p>
         )}

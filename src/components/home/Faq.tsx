@@ -47,9 +47,7 @@ export default function Faq() {
     <section className="bg-surface py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center rounded-full border border-primary/10 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-            Common Questions
-          </span>
+          <p className="eyebrow justify-center">Common Questions</p>
           <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
             Frequently Asked Questions
           </h2>
@@ -59,10 +57,7 @@ export default function Faq() {
           {FAQS.map((faq, i) => {
             const open = openIndex === i;
             return (
-              <div
-                key={faq.question}
-                className="rounded-2xl border border-primary/5 bg-white card-shadow"
-              >
+              <div key={faq.question} className="card">
                 <button
                   type="button"
                   onClick={() => setOpenIndex(open ? null : i)}

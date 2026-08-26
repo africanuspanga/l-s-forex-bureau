@@ -85,7 +85,7 @@ export default async function AdminSuggestionsPage() {
                     <td className="tabular px-4 py-3 text-muted">
                       {s.currentBuyingRate !== null && s.currentSellingRate !== null
                         ? `${formatRateNumber(s.currentBuyingRate)} / ${formatRateNumber(s.currentSellingRate)}`
-                        : "—"}
+                        : "-"}
                     </td>
                     <td className="tabular px-4 py-3 font-medium text-foreground">
                       {formatRateNumber(s.suggestedBuyingRate)} /{" "}

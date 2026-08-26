@@ -122,10 +122,10 @@ export default function RatesManager({ rows: initialRows }: { rows: RateManagerR
                     <p className="text-xs text-muted">{row.name}</p>
                   </td>
                   <td className="tabular px-4 py-3 text-muted">
-                    {row.publishedBuy !== null ? formatRateNumber(row.publishedBuy) : "—"}
+                    {row.publishedBuy !== null ? formatRateNumber(row.publishedBuy) : "-"}
                   </td>
                   <td className="tabular px-4 py-3 text-muted">
-                    {row.publishedSell !== null ? formatRateNumber(row.publishedSell) : "—"}
+                    {row.publishedSell !== null ? formatRateNumber(row.publishedSell) : "-"}
                   </td>
                   <td className="px-4 py-3">
                     <input

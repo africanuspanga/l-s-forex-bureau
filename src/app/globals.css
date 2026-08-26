@@ -22,7 +22,7 @@
   --font-display: var(--font-sora), var(--font-inter), ui-sans-serif, sans-serif;
 
   /* Radii */
-  --radius-card: 1.25rem;
+  --radius-card: 1rem;
 
   --animate-fade-up: fade-up 0.7s ease-out both;
 }
@@ -54,21 +54,21 @@ body {
   color: var(--color-primary-deep);
 }
 
-/* Brand gradient helpers */
+/* Brand gradient helper — kept for the one signature CTA band, not for every surface */
 .bg-brand-gradient {
-  background-image: linear-gradient(
-    135deg,
-    var(--color-primary) 0%,
-    #0150f0 45%,
-    var(--color-accent) 130%
-  );
+  background-image: linear-gradient(135deg, var(--color-primary) 0%, #0150f0 45%, var(--color-accent) 130%);
 }
 
+/* Solid brand band for inner-page hero strips (no glow blobs) */
 .bg-hero-mesh {
+  background-image: linear-gradient(120deg, var(--color-primary-deep) 0%, var(--color-primary) 70%, var(--color-primary-dark) 100%);
+}
+
+/* Photo hero scrim — real photography, not a gradient mesh */
+.hero-scrim {
   background-image:
-    radial-gradient(ellipse 60% 50% at 85% -10%, rgba(9, 195, 254, 0.35), transparent),
-    radial-gradient(ellipse 50% 40% at -10% 110%, rgba(9, 195, 254, 0.22), transparent),
-    linear-gradient(160deg, #013ae1 0%, #012cb0 55%, #0a1440 100%);
+    linear-gradient(100deg, rgba(1, 10, 60, 0.94) 0%, rgba(1, 20, 90, 0.8) 42%, rgba(1, 40, 130, 0.4) 78%, rgba(1, 58, 225, 0.18) 100%),
+    linear-gradient(0deg, rgba(1, 10, 60, 0.55) 0%, transparent 35%);
 }
 
 .text-gradient {
@@ -78,18 +78,137 @@ body {
   color: transparent;
 }
 
+/* Whisper-level shadows only — no colored glow */
 .card-shadow {
-  box-shadow:
-    0 1px 2px rgba(10, 20, 64, 0.05),
-    0 12px 32px -12px rgba(1, 58, 225, 0.18);
+  box-shadow: 0 4px 24px rgba(10, 20, 64, 0.05);
 }
 
 .card-shadow-lg {
-  box-shadow:
-    0 2px 4px rgba(10, 20, 64, 0.06),
-    0 32px 64px -24px rgba(1, 58, 225, 0.3);
+  box-shadow: 0 12px 40px rgba(10, 20, 64, 0.09);
 }
 
 .tabular {
   font-variant-numeric: tabular-nums;
+}
+
+/* ---------------------------------------------------------------- */
+/* Buttons — 12px radius max, never pill                             */
+/* ---------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 12px;
+  padding: 13px 24px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btn-primary {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background: var(--color-primary-dark);
+}
+.btn-accent {
+  background: var(--color-accent);
+  color: var(--color-primary-deep);
+}
+.btn-accent:hover {
+  background: var(--color-accent-soft);
+}
+.btn-outline {
+  background: #ffffff;
+  color: var(--color-primary-deep);
+  border: 1px solid rgba(1, 20, 64, 0.15);
+}
+.btn-outline:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.btn-dark {
+  background: var(--color-primary-deep);
+  color: #ffffff;
+}
+.btn-dark:hover {
+  background: #0d1b52;
+}
+.btn-white {
+  background: #ffffff;
+  color: var(--color-primary);
+  box-shadow: 0 4px 24px rgba(10, 20, 64, 0.08);
+}
+.btn-white:hover {
+  background: var(--color-surface);
+}
+.btn-ghost-light {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.btn-ghost-light:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* ---------------------------------------------------------------- */
+/* Cards                                                              */
+/* ---------------------------------------------------------------- */
+.card {
+  border-radius: 16px;
+  border: 1px solid rgba(10, 20, 64, 0.06);
+  background: #ffffff;
+  box-shadow: 0 4px 24px rgba(10, 20, 64, 0.04);
+}
+
+/* ---------------------------------------------------------------- */
+/* Eyebrow label — quiet kicker, not a pill badge                    */
+/* ---------------------------------------------------------------- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+}
+.eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+.eyebrow-light {
+  color: #ffffff;
+}
+.eyebrow-light::before {
+  background: var(--color-accent);
+}
+.eyebrow-accent {
+  color: var(--color-accent);
+}
+.eyebrow-accent::before {
+  background: var(--color-accent);
+}
+
+/* Small status badges (e.g. "updated 3h ago") — rect, not pill */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: var(--color-surface);
+  color: var(--color-muted);
 }

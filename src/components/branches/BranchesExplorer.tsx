@@ -118,9 +118,9 @@ export default function BranchesExplorer({ branches }: { branches: Branch[] }) {
             <article
               key={branch.id}
               onClick={() => setSelectedSlug(branch.slug)}
-              className={`cursor-pointer rounded-3xl bg-white p-6 transition-all duration-300 sm:p-7 ${
+              className={`cursor-pointer rounded-2xl bg-white p-6 transition-all duration-300 sm:p-7 ${
                 isSelected
-                  ? "card-shadow-lg ring-2 ring-primary border border-primary"
+                  ? "card-shadow-lg border border-primary"
                   : "card-shadow border border-surface-alt hover:border-accent"
               }`}
             >
@@ -139,7 +139,7 @@ export default function BranchesExplorer({ branches }: { branches: Branch[] }) {
                     event.stopPropagation();
                     setSelectedSlug(branch.slug);
                   }}
-                  className={`shrink-0 rounded-full px-4 py-2 text-xs font-semibold transition-colors ${
+                  className={`shrink-0 rounded-lg px-4 py-2 text-xs font-semibold transition-colors ${
                     isSelected
                       ? "bg-primary text-white"
                       : "bg-surface text-primary hover:bg-surface-alt"
@@ -187,7 +187,7 @@ export default function BranchesExplorer({ branches }: { branches: Branch[] }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(event) => event.stopPropagation()}
-                  className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-dark"
+                  className="btn btn-primary"
                 >
                   <DirectionsIcon className="h-4 w-4" />
                   Get Directions
@@ -195,7 +195,7 @@ export default function BranchesExplorer({ branches }: { branches: Branch[] }) {
                 <Link
                   href={`/branches/${branch.slug}`}
                   onClick={(event) => event.stopPropagation()}
-                  className="inline-flex items-center gap-2 rounded-full border border-surface-alt px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-surface"
+                  className="btn btn-outline"
                 >
                   View branch
                   <ArrowIcon className="h-4 w-4" />
@@ -208,7 +208,7 @@ export default function BranchesExplorer({ branches }: { branches: Branch[] }) {
 
       {/* Map */}
       <div className="lg:sticky lg:top-24">
-        <div className="card-shadow overflow-hidden rounded-3xl border border-surface-alt bg-white">
+        <div className="card-shadow overflow-hidden rounded-2xl border border-surface-alt bg-white">
           {selected && (
             <iframe
               key={selected.slug}
@@ -223,7 +223,7 @@ export default function BranchesExplorer({ branches }: { branches: Branch[] }) {
         </div>
         {selected && (
           <p className="mt-4 text-center text-sm text-muted">
-            Showing <span className="font-semibold text-foreground">{selected.area}</span> —{" "}
+            Showing <span className="font-semibold text-foreground">{selected.area}</span>:{" "}
             <a
               href={selected.mapUrl}
               target="_blank"

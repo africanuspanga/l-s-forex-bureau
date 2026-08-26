@@ -80,14 +80,14 @@ export default function ContactForm({ branches }: { branches: BranchOption[] }) 
   const submitting = status === "submitting";
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="rounded-2xl bg-white p-7 card-shadow sm:p-9">
+    <form onSubmit={handleSubmit} noValidate className="card p-7 sm:p-9">
       <h2 className="font-display text-2xl font-semibold tracking-tight text-foreground">
         Send Us a Message
       </h2>
 
       {status === "success" && (
         <p className="mt-5 rounded-xl bg-surface-alt px-4 py-3 text-sm font-medium text-primary">
-          Thank you — our team will get back to you.
+          Thank you! Our team will get back to you.
         </p>
       )}
       {status === "error" && (
@@ -191,7 +191,7 @@ export default function ContactForm({ branches }: { branches: BranchOption[] }) 
       <button
         type="submit"
         disabled={submitting}
-        className="mt-7 rounded-full bg-primary px-8 py-3 text-sm font-semibold text-white transition-transform hover:scale-[1.03] active:scale-100 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100"
+        className="btn btn-primary mt-7 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {submitting ? "Sending…" : "Send Message"}
       </button>

@@ -38,41 +38,6 @@ function mapEmbedUrl(branch: Branch): string {
   return `https://www.google.com/maps?q=${encodeURIComponent(query)}&z=15&output=embed`;
 }
 
-function PinIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.8}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z" />
-      <circle cx="12" cy="10" r="3" />
-    </svg>
-  );
-}
-
-function ClockIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.8}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <circle cx="12" cy="12" r="9" />
-      <path d="M12 7v5l3 2" />
-    </svg>
-  );
-}
 
 function PhoneIcon({ className }: { className?: string }) {
   return (
@@ -169,11 +134,9 @@ export default async function BranchDetailPage({ params }: Props) {
       />
 
       {/* Hero */}
-      <section className="bg-hero-mesh pt-16">
+      <section className="bg-hero-mesh pt-24">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
-          <p className="animate-fade-up inline-block rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-accent-soft">
-            L&S Branch
-          </p>
+          <p className="eyebrow eyebrow-accent animate-fade-up">L&amp;S Branch</p>
           <h1
             className="animate-fade-up font-display mt-6 max-w-3xl text-4xl font-bold tracking-tight text-white sm:text-5xl"
             style={{ animationDelay: "80ms" }}
@@ -193,68 +156,45 @@ export default async function BranchDetailPage({ params }: Props) {
       <section className="bg-surface py-16 sm:py-20">
         <div className="mx-auto grid max-w-6xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:items-start lg:px-8">
           {/* Info card */}
-          <div className="card-shadow rounded-3xl border border-surface-alt bg-white p-7 sm:p-9">
+          <div className="card p-7 sm:p-9">
             <h2 className="font-display text-2xl font-semibold text-foreground">
               Visit This Branch
             </h2>
 
-            <dl className="mt-7 flex flex-col gap-6">
-              <div className="flex items-start gap-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-surface text-primary">
-                  <PinIcon className="h-5 w-5" />
-                </span>
-                <div>
-                  <dt className="text-xs font-semibold uppercase tracking-[0.15em] text-primary">
-                    Address
-                  </dt>
-                  <dd className="mt-1 text-muted">{branch.address}</dd>
-                </div>
+            <dl className="mt-7 flex flex-col gap-5">
+              <div className="border-l-2 border-primary py-1 pl-4">
+                <dt className="text-xs font-semibold uppercase tracking-[0.15em] text-primary">
+                  Address
+                </dt>
+                <dd className="mt-1 text-muted">{branch.address}</dd>
               </div>
-              <div className="flex items-start gap-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-surface text-primary">
-                  <ClockIcon className="h-5 w-5" />
-                </span>
-                <div>
-                  <dt className="text-xs font-semibold uppercase tracking-[0.15em] text-primary">
-                    Opening Hours
-                  </dt>
-                  <dd className="mt-1 text-muted">{branch.openingHours}</dd>
-                </div>
+              <div className="border-l-2 border-primary py-1 pl-4">
+                <dt className="text-xs font-semibold uppercase tracking-[0.15em] text-primary">
+                  Opening Hours
+                </dt>
+                <dd className="mt-1 text-muted">{branch.openingHours}</dd>
               </div>
-              <div className="flex items-start gap-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-surface text-primary">
-                  <PhoneIcon className="h-5 w-5" />
-                </span>
-                <div>
-                  <dt className="text-xs font-semibold uppercase tracking-[0.15em] text-primary">
-                    Phone
-                  </dt>
-                  <dd className="mt-1">
-                    <a
-                      href={`tel:${branch.phone}`}
-                      className="font-medium text-foreground transition-colors hover:text-primary"
-                    >
-                      {branch.phone}
-                    </a>
-                  </dd>
-                </div>
+              <div className="border-l-2 border-primary py-1 pl-4">
+                <dt className="text-xs font-semibold uppercase tracking-[0.15em] text-primary">
+                  Phone
+                </dt>
+                <dd className="mt-1">
+                  <a
+                    href={`tel:${branch.phone}`}
+                    className="font-medium text-foreground transition-colors hover:text-primary"
+                  >
+                    {branch.phone}
+                  </a>
+                </dd>
               </div>
             </dl>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href={branch.mapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-dark"
-              >
+              <a href={branch.mapUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                 <DirectionsIcon className="h-4 w-4" />
                 Get Directions
               </a>
-              <a
-                href={`tel:${branch.phone}`}
-                className="inline-flex items-center gap-2 rounded-full border border-surface-alt px-6 py-3 text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-surface"
-              >
+              <a href={`tel:${branch.phone}`} className="btn btn-outline">
                 <PhoneIcon className="h-4 w-4" />
                 Call {branch.phone}
               </a>
@@ -262,7 +202,7 @@ export default async function BranchDetailPage({ params }: Props) {
           </div>
 
           {/* Map */}
-          <div className="card-shadow overflow-hidden rounded-3xl border border-surface-alt bg-white">
+          <div className="card-shadow overflow-hidden rounded-2xl border border-surface-alt bg-white">
             <iframe
               src={mapEmbedUrl(branch)}
               title={`Map of ${branch.name}, ${branch.area}, Dar es Salaam`}
@@ -278,22 +218,17 @@ export default async function BranchDetailPage({ params }: Props) {
       {/* What to bring + rates teaser */}
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="card-shadow rounded-3xl border border-surface-alt bg-surface p-7 sm:p-10">
+          <div className="card border-surface-alt bg-surface p-7 sm:p-10">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
               <div className="max-w-2xl">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                  What to Bring
-                </p>
+                <p className="eyebrow">What to Bring</p>
                 <p className="mt-3 text-muted">
                   Bring the currency you wish to exchange together with any
                   identification or supporting documents required for your
                   transaction.
                 </p>
               </div>
-              <Link
-                href="/rates"
-                className="inline-flex shrink-0 items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-dark"
-              >
+              <Link href="/rates" className="btn btn-primary shrink-0">
                 View today&apos;s rates before you visit
                 <ArrowIcon className="h-4 w-4" />
               </Link>
@@ -313,7 +248,7 @@ export default async function BranchDetailPage({ params }: Props) {
               <Link
                 key={other.id}
                 href={`/branches/${other.slug}`}
-                className="card-shadow group rounded-3xl border border-surface-alt bg-white p-6 transition-all duration-300 hover:border-accent"
+                className="card group border-surface-alt p-6 transition-colors duration-300 hover:border-accent"
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
                   {other.area}

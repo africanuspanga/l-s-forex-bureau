@@ -61,7 +61,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero band */}
-      <section className="bg-hero-mesh pt-16">
+      <section className="bg-hero-mesh pt-24">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             What We Do
@@ -77,23 +77,8 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 md:grid-cols-2">
             {SERVICES.map((service) => (
-              <div
-                key={service.title}
-                className="rounded-2xl bg-white p-8 card-shadow transition-transform duration-300 hover:-translate-y-1"
-              >
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-surface-alt text-primary">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={1.8}
-                    className="h-6 w-6"
-                  >
-                    {service.icon}
-                    {"extraIcon" in service ? service.extraIcon : null}
-                  </svg>
-                </span>
-                <h2 className="mt-5 font-display text-xl font-semibold text-foreground">
+              <div key={service.title} className="card p-8">
+                <h2 className="font-display text-xl font-semibold text-foreground">
                   {service.title}
                 </h2>
                 <p className="mt-3 leading-relaxed text-muted">{service.copy}</p>
@@ -106,21 +91,15 @@ export default function ServicesPage() {
       {/* CTA band */}
       <section className="bg-background py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl bg-brand-gradient px-6 py-14 text-center sm:px-12 lg:py-20">
+          <div className="rounded-2xl bg-brand-gradient px-6 py-14 text-center sm:px-12 lg:py-20">
             <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Need Foreign Currency Today?
             </h2>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href="/rates"
-                className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-primary transition-transform hover:scale-[1.03] active:scale-100"
-              >
+              <Link href="/rates" className="btn btn-white">
                 Check Exchange Rates
               </Link>
-              <a
-                href={`tel:${PHONE_TEL}`}
-                className="rounded-full border border-white/40 px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
-              >
+              <a href={`tel:${PHONE_TEL}`} className="btn btn-ghost-light">
                 Call {PHONE_DISPLAY}
               </a>
             </div>

@@ -59,13 +59,13 @@ export default async function AdminHistoryPage() {
                     <td className="tabular px-4 py-2.5 text-foreground">
                       {h.previousBuyingRate !== null
                         ? formatRateNumber(h.previousBuyingRate)
-                        : "—"}{" "}
+                        : "-"}{" "}
                       → {formatRateNumber(h.newBuyingRate)}
                     </td>
                     <td className="tabular px-4 py-2.5 text-foreground">
                       {h.previousSellingRate !== null
                         ? formatRateNumber(h.previousSellingRate)
-                        : "—"}{" "}
+                        : "-"}{" "}
                       → {formatRateNumber(h.newSellingRate)}
                     </td>
                     <td className="px-4 py-2.5 text-muted">{h.user}</td>

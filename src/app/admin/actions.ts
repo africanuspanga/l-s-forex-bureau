@@ -109,7 +109,7 @@ export async function publish(): Promise<PublishActionResult> {
       errors: result.errors,
       error:
         result.published === 0
-          ? "Nothing was published — fix the validation errors below."
+          ? "Nothing was published. Fix the validation errors below."
           : undefined,
     };
   }

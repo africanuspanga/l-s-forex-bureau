@@ -106,7 +106,7 @@ export default function BulkManager() {
           {parsed && (
             <p className="text-sm text-muted">
               {parsed.validCount} of {parsed.rows.length} row(s) valid
-              {hasErrors ? " — fix the highlighted rows before publishing." : "."}
+              {hasErrors ? ": fix the highlighted rows before publishing." : "."}
             </p>
           )}
         </div>
@@ -133,13 +133,13 @@ export default function BulkManager() {
                     }`}
                   >
                     <td className="px-5 py-2.5 font-medium text-foreground">
-                      {row.currencyCode || "—"}
+                      {row.currencyCode || "-"}
                     </td>
                     <td className="tabular px-4 py-2.5 text-foreground">
-                      {Number.isFinite(row.buyingRate) ? formatRateNumber(row.buyingRate) : "—"}
+                      {Number.isFinite(row.buyingRate) ? formatRateNumber(row.buyingRate) : "-"}
                     </td>
                     <td className="tabular px-4 py-2.5 text-foreground">
-                      {Number.isFinite(row.sellingRate) ? formatRateNumber(row.sellingRate) : "—"}
+                      {Number.isFinite(row.sellingRate) ? formatRateNumber(row.sellingRate) : "-"}
                     </td>
                     <td className="px-5 py-2.5">
                       {row.ok ? (

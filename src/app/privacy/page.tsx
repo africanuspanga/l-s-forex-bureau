@@ -14,7 +14,7 @@ const SECTIONS = [
   },
   {
     title: "How We Use Your Information",
-    copy: "The information you submit is used only to respond to your enquiry — for example, to answer a question about exchange rates, currency availability or branch locations. We do not use it for any other purpose.",
+    copy: "The information you submit is used only to respond to your enquiry, for example to answer a question about exchange rates, currency availability or branch locations. We do not use it for any other purpose.",
   },
   {
     title: "No Online Transactions",
@@ -34,7 +34,7 @@ export default function PrivacyPage() {
   return (
     <>
       {/* Hero band */}
-      <section className="bg-hero-mesh pt-16">
+      <section className="bg-hero-mesh pt-24">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             Privacy Policy

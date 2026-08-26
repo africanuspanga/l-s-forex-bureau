@@ -29,7 +29,7 @@ export default function RateCard({ rate, trend7, trend30 }: RateCardProps) {
   const trend = rate.trend ? TREND_STYLES[rate.trend] : null;
 
   return (
-    <article className="rounded-2xl border border-primary/5 bg-white p-6 card-shadow transition-transform hover:-translate-y-1">
+    <article className="card p-6 transition-shadow hover:shadow-[0_8px_32px_rgba(10,20,64,0.09)]">
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-center gap-3">
           <span className="text-3xl leading-none" aria-hidden="true">
@@ -44,7 +44,7 @@ export default function RateCard({ rate, trend7, trend30 }: RateCardProps) {
         </div>
         {trend && (
           <span
-            className={`tabular inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold ${trend.classes}`}
+            className={`tabular inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-semibold ${trend.classes}`}
           >
             <span aria-hidden="true">{trend.arrow}</span>
             {rate.changePercent !== null &&
@@ -53,15 +53,15 @@ export default function RateCard({ rate, trend7, trend30 }: RateCardProps) {
         )}
       </div>
 
-      <dl className="mt-5 grid grid-cols-2 gap-4">
+      <dl className="mt-5 grid grid-cols-2 gap-4 border-t border-primary/6 pt-4">
         <div>
-          <dt className="text-xs font-semibold uppercase tracking-[0.15em] text-muted">Buying</dt>
+          <dt className="text-xs font-semibold uppercase tracking-[0.1em] text-muted">Buying</dt>
           <dd className="tabular mt-1 text-lg font-bold text-foreground">
             {formatTzs(rate.buyingRate)}
           </dd>
         </div>
         <div>
-          <dt className="text-xs font-semibold uppercase tracking-[0.15em] text-muted">Selling</dt>
+          <dt className="text-xs font-semibold uppercase tracking-[0.1em] text-muted">Selling</dt>
           <dd className="tabular mt-1 text-lg font-bold text-foreground">
             {formatTzs(rate.sellingRate)}
           </dd>
@@ -72,7 +72,7 @@ export default function RateCard({ rate, trend7, trend30 }: RateCardProps) {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
-        className="mt-5 flex w-full items-center justify-between rounded-xl border border-primary/10 px-4 py-2.5 text-xs font-semibold text-primary transition hover:bg-primary/5"
+        className="mt-5 flex w-full items-center justify-between rounded-xl border border-primary/12 px-4 py-2.5 text-xs font-semibold text-primary transition hover:bg-primary/5"
       >
         Rate history
         <svg
@@ -87,7 +87,7 @@ export default function RateCard({ rate, trend7, trend30 }: RateCardProps) {
       </button>
 
       {open && (
-        <div className="mt-4 border-t border-primary/5 pt-4">
+        <div className="mt-4 border-t border-primary/6 pt-4">
           <TrendChart trend7={trend7} trend30={trend30} />
         </div>
       )}

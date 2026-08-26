@@ -71,27 +71,21 @@ export default function ExchangeCalculator({ rates }: ExchangeCalculatorProps) {
 
   const renderOptions = () => (
     <>
-      <option value="TZS">🇹🇿 TZS — Tanzanian Shilling</option>
+      <option value="TZS">🇹🇿 TZS - Tanzanian Shilling</option>
       {rates.map((r) => (
         <option key={r.currency.code} value={r.currency.code}>
-          {r.currency.flag} {r.currency.code} — {r.currency.name}
+          {r.currency.flag} {r.currency.code} - {r.currency.name}
         </option>
       ))}
     </>
   );
 
   return (
-    <div className="rounded-3xl bg-white p-6 card-shadow-lg sm:p-8">
-      <div className="flex items-center gap-3">
-        <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="h-5 w-5">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M7 16V8m0 0L4 11m3-3l3 3m7-3v8m0 0l3-3m-3 3l-3-3" />
-          </svg>
-        </span>
-        <h2 className="font-display text-xl font-bold tracking-tight text-foreground">
-          Check Your Exchange
-        </h2>
-      </div>
+    <div className="card p-6 sm:p-8">
+      <h2 className="font-display text-xl font-bold tracking-tight text-foreground">
+        Check Your Exchange
+      </h2>
+      <p className="mt-1 text-sm text-muted">Indicative conversion, confirmed at the branch.</p>
 
       <div className="mt-6 space-y-5">
         <div>
@@ -147,7 +141,7 @@ export default function ExchangeCalculator({ rates }: ExchangeCalculatorProps) {
               aria-live="polite"
               className="tabular flex w-28 items-center rounded-xl border border-primary/10 bg-primary/5 px-4 py-3 text-sm font-semibold text-foreground sm:w-36"
             >
-              {result !== null && Number.isFinite(result) ? formatAmount(result) : "—"}
+              {result !== null && Number.isFinite(result) ? formatAmount(result) : "-"}
             </div>
           </div>
         </div>
@@ -160,16 +154,10 @@ export default function ExchangeCalculator({ rates }: ExchangeCalculatorProps) {
         )}
 
         <div className="flex flex-col gap-3 sm:flex-row">
-          <Link
-            href="/rates"
-            className="flex-1 rounded-full bg-primary px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-primary-dark"
-          >
+          <Link href="/rates" className="btn btn-primary flex-1">
             View All Rates
           </Link>
-          <Link
-            href="/branches"
-            className="flex-1 rounded-full border border-primary/20 px-6 py-3 text-center text-sm font-semibold text-primary transition hover:border-primary/40 hover:bg-primary/5"
-          >
+          <Link href="/branches" className="btn btn-outline flex-1">
             Visit a Branch
           </Link>
         </div>

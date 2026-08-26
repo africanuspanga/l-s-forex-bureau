@@ -24,7 +24,7 @@ export default async function RatesPage() {
   return (
     <>
       {/* Hero band */}
-      <section className="bg-hero-mesh pt-16">
+      <section className="bg-hero-mesh pt-24">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             L&S Exchange Rates

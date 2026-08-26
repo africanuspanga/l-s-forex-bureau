@@ -31,9 +31,7 @@ export default async function RatesSection({ rates, lastUpdated }: RatesSectionP
     <section className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
-          <span className="inline-flex items-center rounded-full border border-primary/10 bg-surface px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-            Live L&amp;S Rates
-          </span>
+          <p className="eyebrow">Today&apos;s L&amp;S Rates</p>
           <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
             Today&apos;s Foreign Exchange Rates
           </h2>
@@ -58,10 +56,7 @@ export default async function RatesSection({ rates, lastUpdated }: RatesSectionP
         </div>
 
         <div className="mt-12 flex flex-col items-center gap-5 text-center">
-          <Link
-            href="/rates"
-            className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary-dark"
-          >
+          <Link href="/rates" className="btn btn-primary">
             See All Exchange Rates
           </Link>
           <p className="max-w-xl text-xs leading-relaxed text-muted">
@@ -77,9 +72,7 @@ export default async function RatesSection({ rates, lastUpdated }: RatesSectionP
                 </svg>
                 Last updated: {formatDateTime(lastUpdated)}
               </p>
-              <span className="rounded-full border border-primary/10 bg-surface px-4 py-1.5 text-xs font-medium text-muted">
-                Rates updated {timeAgo(lastUpdated)}
-              </span>
+              <span className="badge">Rates updated {timeAgo(lastUpdated)}</span>
             </>
           )}
         </div>

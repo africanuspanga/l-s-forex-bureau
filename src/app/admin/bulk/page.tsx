@@ -23,7 +23,7 @@ export default async function AdminBulkPage() {
           <code className="rounded bg-surface-alt px-1.5 py-0.5 text-xs">
             CODE | buy | sell
           </code>{" "}
-          (commas, tabs or wide spaces also work). Preview first — rows with
+          (commas, tabs or wide spaces also work). Preview first: rows with
           errors are never saved or published.
         </p>
       </div>

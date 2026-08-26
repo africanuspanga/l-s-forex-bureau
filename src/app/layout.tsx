@@ -3,6 +3,9 @@ import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MobileBottomNav from "@/components/MobileBottomNav";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import { PHONE_TEL } from "@/lib/format";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -31,10 +34,10 @@ const jsonLd = {
   telephone: "+255743881309",
   areaServed: "Dar es Salaam, Tanzania",
   branch: [
-    { "@type": "FinancialService", name: "L&S Forex Bureau — Tegeta" },
-    { "@type": "FinancialService", name: "L&S Forex Bureau — Mbezi Beach" },
-    { "@type": "FinancialService", name: "L&S Forex Bureau — Mikocheni" },
-    { "@type": "FinancialService", name: "L&S Forex Bureau — Masaki" },
+    { "@type": "FinancialService", name: "L&S Forex Bureau, Tegeta" },
+    { "@type": "FinancialService", name: "L&S Forex Bureau, Mbezi Beach" },
+    { "@type": "FinancialService", name: "L&S Forex Bureau, Mikocheni" },
+    { "@type": "FinancialService", name: "L&S Forex Bureau, Masaki" },
   ],
 };
 
@@ -49,6 +52,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <WhatsAppButton phone={PHONE_TEL.replace("+", "")} />
+        <MobileBottomNav
+          items={[
+            { href: "/", label: "Home", icon: "home" },
+            { href: "/rates", label: "Rates", icon: "rates" },
+            { href: "/branches", label: "Branches", icon: "branches" },
+            { href: "/contact", label: "Contact", icon: "contact" },
+          ]}
+        />
       </body>
     </html>
   );

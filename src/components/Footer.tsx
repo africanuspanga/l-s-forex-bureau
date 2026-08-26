@@ -13,15 +13,15 @@ const LINKS = [
 export default function Footer() {
   return (
     <footer className="bg-primary-deep text-white">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 pb-28 pt-14 sm:px-6 lg:px-8 lg:pb-14">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <Image
               src="/logo.png"
               alt="L&S Forex Bureau"
-              width={160}
-              height={72}
-              className="h-10 w-auto"
+              width={175}
+              height={60}
+              className="h-14 w-auto"
             />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/70">
               Professional foreign currency exchange services across Dar es

@@ -17,11 +17,9 @@ export default async function BranchesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-hero-mesh pt-16">
+      <section className="bg-hero-mesh pt-24">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
-          <p className="animate-fade-up inline-block rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-accent-soft">
-            Find L&S
-          </p>
+          <p className="eyebrow eyebrow-accent animate-fade-up">Find L&amp;S</p>
           <h1
             className="animate-fade-up font-display mt-6 max-w-3xl text-4xl font-bold tracking-tight text-white sm:text-5xl"
             style={{ animationDelay: "80ms" }}
@@ -47,7 +45,7 @@ export default async function BranchesPage() {
       {/* CTA band */}
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="bg-brand-gradient card-shadow-lg rounded-3xl px-6 py-12 text-center sm:px-12 sm:py-16">
+          <div className="bg-brand-gradient card-shadow-lg rounded-2xl px-6 py-12 text-center sm:px-12 sm:py-16">
             <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Need Foreign Currency Today?
             </h2>
@@ -56,16 +54,10 @@ export default async function BranchesPage() {
               before you visit.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/rates"
-                className="inline-flex items-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-primary transition-colors hover:bg-surface"
-              >
+              <Link href="/rates" className="btn btn-white">
                 Check Exchange Rates
               </Link>
-              <a
-                href={`tel:${PHONE_TEL}`}
-                className="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
-              >
+              <a href={`tel:${PHONE_TEL}`} className="btn btn-ghost-light">
                 <svg
                   className="h-4 w-4"
                   viewBox="0 0 24 24"

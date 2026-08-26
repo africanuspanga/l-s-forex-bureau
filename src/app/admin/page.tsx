@@ -194,13 +194,13 @@ export default async function AdminDashboardPage() {
                     <td className="tabular py-2 pr-4 text-foreground">
                       {h.previousBuyingRate !== null
                         ? formatRateNumber(h.previousBuyingRate)
-                        : "—"}{" "}
+                        : "-"}{" "}
                       → {formatRateNumber(h.newBuyingRate)}
                     </td>
                     <td className="tabular py-2 pr-4 text-foreground">
                       {h.previousSellingRate !== null
                         ? formatRateNumber(h.previousSellingRate)
-                        : "—"}{" "}
+                        : "-"}{" "}
                       → {formatRateNumber(h.newSellingRate)}
                     </td>
                     <td className="py-2 pr-4 text-muted">{h.user}</td>

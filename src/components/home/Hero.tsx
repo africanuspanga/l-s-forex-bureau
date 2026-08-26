@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { CurrencyRate } from "@/lib/rates";
 import ExchangeCalculator from "@/components/ExchangeCalculator";
@@ -8,34 +9,38 @@ interface HeroProps {
 
 export default function Hero({ rates }: HeroProps) {
   return (
-    <section className="bg-hero-mesh pt-16">
-      <div className="mx-auto max-w-7xl px-4 pb-24 pt-14 sm:px-6 sm:pt-20 lg:px-8 lg:pb-28">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+    <section className="relative overflow-hidden pt-24">
+      <div className="absolute inset-0">
+        <Image
+          src="/photos/hero-bridge.jpg"
+          alt="Kigamboni Bridge, Dar es Salaam"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="hero-scrim absolute inset-0" />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-16 sm:px-6 sm:pt-24 lg:px-8 lg:pb-28 lg:pt-28">
+        <div className="grid items-end gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="animate-fade-up">
-            <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              Foreign Exchange • Dar es Salaam
-            </span>
-            <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl">
+            <p className="eyebrow eyebrow-accent">Foreign Exchange — Dar es Salaam</p>
+            <h1 className="mt-5 font-display text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl">
               Exchange Currency
               <br />
               <span className="text-accent">With Confidence.</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/75">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">
               Get competitive foreign exchange rates and professional service at
               L&amp;S Forex Bureau. Check today&apos;s rates online, then visit
               your nearest L&amp;S branch to complete your exchange.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/rates"
-                className="rounded-full bg-accent px-6 py-3 text-center text-sm font-semibold text-primary-deep transition hover:bg-accent-soft"
-              >
+              <Link href="/rates" className="btn btn-accent">
                 View Today&apos;s Rates
               </Link>
-              <Link
-                href="/branches"
-                className="rounded-full border border-white/10 bg-white/5 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
-              >
+              <Link href="/branches" className="btn btn-ghost-light">
                 Find a Branch
               </Link>
             </div>

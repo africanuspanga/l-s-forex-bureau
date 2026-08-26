@@ -38,49 +38,45 @@ export default function Navbar() {
           : "bg-primary"
       }`}
     >
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <nav className="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3" aria-label="L&S Forex Bureau home">
           <Image
             src="/logo.png"
             alt="L&S Forex Bureau"
-            width={160}
-            height={72}
-            className="h-9 w-auto"
+            width={175}
+            height={60}
+            className="h-14 w-auto sm:h-16"
             priority
           />
         </Link>
 
-        <ul className="hidden items-center gap-1 lg:flex">
+        <ul className="hidden items-center gap-6 lg:flex">
           {NAV_LINKS.map((link) => {
             const active = pathname === link.href;
             return (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                    active
-                      ? "bg-white/15 text-white"
-                      : "text-white/80 hover:bg-white/10 hover:text-white"
+                  className={`relative py-2 text-sm font-medium transition-colors ${
+                    active ? "text-white" : "text-white/75 hover:text-white"
                   }`}
                 >
                   {link.label}
+                  {active && <span className="absolute inset-x-0 -bottom-[1px] h-0.5 bg-accent" />}
                 </Link>
               </li>
             );
           })}
         </ul>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-4 lg:flex">
           <a
             href="tel:+255743881309"
             className="text-sm font-semibold text-white/90 transition-colors hover:text-white"
           >
             0743 881 309
           </a>
-          <Link
-            href="/branches"
-            className="rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-primary-deep transition-transform hover:scale-[1.03] active:scale-100"
-          >
+          <Link href="/branches" className="btn btn-accent">
             Find a Branch
           </Link>
         </div>
@@ -121,16 +117,10 @@ export default function Navbar() {
             ))}
           </ul>
           <div className="mt-4 flex flex-col gap-3">
-            <Link
-              href="/branches"
-              className="rounded-full bg-accent px-5 py-3 text-center text-sm font-semibold text-primary-deep"
-            >
+            <Link href="/branches" className="btn btn-accent">
               Find a Branch
             </Link>
-            <a
-              href="tel:+255743881309"
-              className="rounded-full border border-white/30 px-5 py-3 text-center text-sm font-semibold text-white"
-            >
+            <a href="tel:+255743881309" className="btn btn-ghost-light">
               Call 0743 881 309
             </a>
           </div>

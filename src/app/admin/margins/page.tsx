@@ -35,7 +35,7 @@ export default async function AdminMarginsPage() {
       <div className="rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-800">
         These percentages are configurable commercial rules set by L&S
         management. With auto-publish off, suggestions always require manual
-        approval. Note: auto-publish is stored for a future phase only — the
+        approval. Note: auto-publish is stored for a future phase only; the
         importer never auto-publishes in this phase.
       </div>
 
