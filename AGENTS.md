@@ -130,3 +130,66 @@ vercel.json                  # Vercel cron: 08:00 / 10:00 / 12:00 EAT (05/07/09 
 - Seed `rateHistory` is auto-synthesized (30 days) on first run so trend charts render;
   real history accumulates from then on.
 - Contact messages are stored in `data/contact-messages.json` (no email hookup yet).
+
+## Session handover — 2026-08-26
+
+This is one of three sibling sites for the same agency (all reviewed together):
+- Papa Faru: https://github.com/africanuspanga/papa-faru (local: `~/Papa Faru Forex`, port 3001)
+- Desderia: https://github.com/africanuspanga/desderia-forex (local: `~/Desderia Forex `, port 3002)
+
+Full redesign pass to fix agency feedback ("cards look AI-generated"). Design system,
+rationale, and what to watch for next time this feedback recurs is written up in full
+in the Claude memory system under `feedback-ai-slop-design-system` (not in this repo) —
+worth reading before making further visual changes here.
+
+Short version of what changed (public marketing pages only — `/admin/*` was left as-is,
+out of scope since it's an internal tool, not what the agency reviews):
+- Reusable component classes added to `globals.css`: `.btn` / `.btn-primary` /
+  `.btn-accent` / `.btn-outline` / `.btn-dark` / `.btn-white` / `.btn-ghost-light` (12px
+  radius, never pill), `.card` (whisper shadow, no colored glow), `.eyebrow` (quiet
+  kicker label, replaces pill badges), `.badge` (small rect status badges). Reuse these
+  instead of inlining new pill/glow Tailwind classes.
+- Hero background is a real photo (`public/photos/hero-bridge.jpg`, Kigamboni Bridge) +
+  `.hero-scrim` gradient. Inner-page hero bands (About/Services/Branches/Contact/Rates/
+  Privacy) kept `.bg-hero-mesh` but it's now a flat brand-color gradient, not the old
+  radial-glow "mesh" — didn't wire photos into every subpage, only the homepage hero and
+  the WhyChoose panel (`public/photos/harbor-dusk.jpg`, low-opacity overlay).
+- `WhyChoose`, the About-page "Our Approach" grid, and the Services page were rewritten:
+  round 1 dropped icon-box cards for `border-l-2` accent lists / plain `.card p-8`
+  grids, but that *still* read as "AI card grid" in agency review. Round 2 fix:
+  WhyChoose and the About values grid now use one flowing editorial paragraph + a
+  single-row fact strip with hairline (`h-4 w-px` / `border-white/20`) dividers between
+  short phrases, no boxes. Services page became a divided list (title/description
+  columns separated by `divide-y`) instead of a 2×2 card grid. `TrustStrip` and
+  `HowItWorks` were left as border-accent lists / numbered steps — HowItWorks'
+  numbering is legitimate (it's a real 4-step sequence), so that one wasn't touched.
+  If "still looks AI" feedback recurs, suspect the shape (N visually equal blocks)
+  before suspecting styling.
+- Added `src/components/RatesTicker.tsx`: a fixed, auto-scrolling rates strip under the
+  navbar (`.ticker-*` classes in `globals.css`), wired by making `layout.tsx` an async
+  Server Component that calls `getFeaturedRates()`. Its divided-strip look deliberately
+  echoes the WhyChoose fact strip. Note this also runs on `/admin/*` pages since there's
+  a single root layout (same pre-existing limitation as Navbar/Footer above).
+- Navbar kept its solid blue background (unlike Papa Faru/Desderia, which had to switch
+  to white for their real logos) — just fixed pill nav-links/buttons to 12px radius.
+- Adding the ticker pushed every page's top padding down by 40px — Hero uses `pt-34`,
+  and every subpage sharing the `bg-hero-mesh pt-24` pattern now uses `bg-hero-mesh
+  pt-34`. If you touch header height (navbar or ticker), these need to move together;
+  Tailwind v4's spacing scale accepts any integer step so arbitrary numbers like `pt-34`
+  are valid, not typos.
+- Real logo/favicon were already correctly wired before this session (`public/logo.png`,
+  white/cyan on transparent, dark backgrounds only — don't put it on a light surface).
+- Repo already existed with 2 prior commits; pushed 2 more this session (design system +
+  ticker/WhyChoose rounds) to https://github.com/africanuspanga/l-s-forex-bureau. Some
+  unrelated pre-existing working-tree changes (em dash → hyphen swaps in admin pages,
+  a couple binary asset updates) were bundled into the first of those two commits since
+  they were already sitting uncommitted — not something this session introduced.
+- Dar es Salaam stock photography for hero/section imagery lives in
+  `/Users/admin/Downloads/Dar-City-Images` — several unused images remain there for
+  future sections (branch pages, etc.) — check before asking the user for new photos.
+
+**Not done / possible next steps:** RateCard, ExchangeCalculator, BranchesExplorer,
+ContactForm, RatesExplorer got button/shadow/radius fixes only, not a full editorial
+redesign. `/admin/*` UI wasn't touched at all. No automated tests exist. Verified via
+`curl` + dev-server logs only this session — no browser screenshot verification was done
+(Chrome extension wasn't connected); worth an actual visual pass next session.
