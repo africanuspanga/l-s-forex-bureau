@@ -61,7 +61,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero band */}
-      <section className="bg-hero-mesh pt-24">
+      <section className="bg-hero-mesh pt-34">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             What We Do
@@ -75,13 +75,16 @@ export default function ServicesPage() {
       {/* Services */}
       <section className="bg-surface py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="divide-y divide-primary/10 border-y border-primary/10">
             {SERVICES.map((service) => (
-              <div key={service.title} className="card p-8">
+              <div
+                key={service.title}
+                className="grid gap-2 py-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] sm:gap-10"
+              >
                 <h2 className="font-display text-xl font-semibold text-foreground">
                   {service.title}
                 </h2>
-                <p className="mt-3 leading-relaxed text-muted">{service.copy}</p>
+                <p className="max-w-2xl leading-relaxed text-muted">{service.copy}</p>
               </div>
             ))}
           </div>

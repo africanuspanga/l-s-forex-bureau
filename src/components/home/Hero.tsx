@@ -9,7 +9,7 @@ interface HeroProps {
 
 export default function Hero({ rates }: HeroProps) {
   return (
-    <section className="relative overflow-hidden pt-24">
+    <section className="relative overflow-hidden pt-34">
       <div className="absolute inset-0">
         <Image
           src="/photos/hero-bridge.jpg"

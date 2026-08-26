@@ -17,7 +17,7 @@ export default async function BranchesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-hero-mesh pt-24">
+      <section className="bg-hero-mesh pt-34">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
           <p className="eyebrow eyebrow-accent animate-fade-up">Find L&amp;S</p>
           <h1
