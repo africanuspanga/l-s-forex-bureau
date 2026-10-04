@@ -5,7 +5,7 @@ export const PHONE_DISPLAY = "0743 881 309";
 export const PHONE_TEL = "+255743881309";
 
 export function formatTzs(value: number): string {
-  const decimals = value < 10 ? 2 : 0;
+  const decimals = value < 100 ? 2 : 0;
   return `TZS ${value.toLocaleString("en-TZ", {
     minimumFractionDigits: decimals,
     maximumFractionDigits: decimals,
@@ -13,7 +13,7 @@ export function formatTzs(value: number): string {
 }
 
 export function formatRateNumber(value: number): string {
-  const decimals = value < 10 ? 2 : 0;
+  const decimals = value < 100 ? 2 : 0;
   return value.toLocaleString("en-TZ", {
     minimumFractionDigits: decimals,
     maximumFractionDigits: decimals,

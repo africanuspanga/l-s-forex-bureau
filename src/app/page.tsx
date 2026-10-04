@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import { getFeaturedRates, getLastUpdatedAt } from "@/lib/rates";
+import { getBranches, getFeaturedRates, getLastUpdatedAt } from "@/lib/rates";
 import Hero from "@/components/home/Hero";
-import TrustStrip from "@/components/home/TrustStrip";
+import BranchLine from "@/components/home/BranchLine";
 import RatesSection from "@/components/home/RatesSection";
 import HowItWorks from "@/components/home/HowItWorks";
 import ServicesSection from "@/components/home/ServicesSection";
-import WhyChoose from "@/components/home/WhyChoose";
-import ConversionCta from "@/components/home/ConversionCta";
 import Faq from "@/components/home/Faq";
+import CallBand from "@/components/CallBand";
 
 export const dynamic = "force-dynamic";
 
@@ -18,21 +17,21 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const [rates, lastUpdated] = await Promise.all([
+  const [rates, lastUpdated, branches] = await Promise.all([
     getFeaturedRates(),
     getLastUpdatedAt(),
+    getBranches(),
   ]);
 
   return (
     <>
       <Hero rates={rates} />
-      <TrustStrip />
+      <BranchLine branches={branches} />
       <RatesSection rates={rates} lastUpdated={lastUpdated} />
       <HowItWorks />
-      <ServicesSection />
-      <WhyChoose />
-      <ConversionCta />
+      <ServicesSection rates={rates} />
       <Faq />
+      <CallBand />
     </>
   );
 }

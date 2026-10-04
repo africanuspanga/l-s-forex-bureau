@@ -1,68 +1,54 @@
 import Link from "next/link";
+import type { CurrencyRate } from "@/lib/rates";
 
-const SMALL_CARDS = [
-  {
-    title: "Major Global Currencies",
-    copy: "Exchange commonly requested international currencies including USD, EUR, GBP, CAD, AUD, CHF, CNY and SAR.",
-  },
-  {
-    title: "Regional Currencies",
-    copy: "Convenient exchange for regional currencies including KES, UGX and ZAR.",
-  },
-  {
-    title: "Large Transactions",
-    copy: "For larger currency requirements, customers may contact an L&S branch beforehand to confirm availability and the applicable rate.",
-  },
-];
+export default function ServicesSection({ rates }: { rates: CurrencyRate[] }) {
+  const major = rates.filter((r) => r.currency.category === "major");
+  const regional = rates.filter((r) => r.currency.category === "regional");
 
-export default function ServicesSection() {
+  const groups = [
+    { label: "International", items: major },
+    { label: "Regional", items: regional },
+  ].filter((g) => g.items.length > 0);
+
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section className="bg-primary-deep py-20 text-white lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl">
-          <p className="eyebrow">What We Do</p>
-          <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-            Straightforward Foreign Exchange
-          </h2>
-        </div>
-
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
-          <div className="flex flex-col justify-between rounded-2xl bg-brand-gradient p-8 card-shadow-lg sm:p-10 lg:row-span-1">
-            <div>
-              <p className="eyebrow-light text-xs font-bold uppercase tracking-[0.1em] text-white/70">
-                Core Service
-              </p>
-              <h3 className="mt-3 font-display text-2xl font-bold tracking-tight text-white">
-                Foreign Currency Exchange
-              </h3>
-              <p className="mt-3 leading-relaxed text-white/80">
-                Buy or sell major international and regional currencies against
-                Tanzanian Shillings through an L&amp;S branch. Whether you are
-                travelling, returning home, conducting business or simply need
-                foreign currency, our team is ready to assist you.
-              </p>
-            </div>
-            <Link href="/services" className="btn btn-white mt-8 w-fit">
-              Explore our services
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-4 w-4">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14m-6-6l6 6-6 6" />
-              </svg>
+        <div className="grid gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <p className="eyebrow eyebrow-light">What we exchange</p>
+            <h2 className="font-display mt-4 text-3xl leading-[1] sm:text-[2.6rem]">
+              Buy or sell against shillings
+            </h2>
+            <p className="mt-5 max-w-md text-lg leading-relaxed text-white/70">
+              Travelling, coming home, paying a supplier or holding foreign cash —
+              bring it to any branch and we&apos;ll exchange it for Tanzanian shillings,
+              or the other way round.
+            </p>
+            <Link href="/services" className="btn btn-ghost-light mt-8">
+              About our services
             </Link>
           </div>
 
-          <div className="grid gap-6">
-            {SMALL_CARDS.map((card, i) => (
-              <div
-                key={card.title}
-                className="card animate-fade-up p-6"
-                style={{ animationDelay: `${i * 90}ms`, borderLeftWidth: "2px", borderLeftColor: "var(--color-primary)" }}
-              >
-                <h3 className="font-display text-base font-bold text-foreground">
-                  {card.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{card.copy}</p>
+          <div className="space-y-10 lg:col-span-7">
+            {groups.map((group) => (
+              <div key={group.label}>
+                <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-accent">{group.label}</p>
+                <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/15 pt-4">
+                  {group.items.map((r) => (
+                    <li key={r.currency.code} title={r.currency.name} className="font-display text-3xl sm:text-4xl">
+                      {r.currency.code}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
+            <div className="border-t border-white/15 pt-6">
+              <p className="font-bold">Changing a large amount?</p>
+              <p className="mt-1 max-w-lg text-white/70">
+                Call your branch first so we can confirm the rate and make sure the
+                notes are ready when you arrive.
+              </p>
+            </div>
           </div>
         </div>
       </div>

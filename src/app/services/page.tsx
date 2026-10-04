@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/rates";
+import CallBand from "@/components/CallBand";
 
 export const metadata: Metadata = {
   title: "Foreign Exchange Services | L&S Forex Bureau",
@@ -90,25 +89,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
-      {/* CTA band */}
-      <section className="bg-background py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl bg-brand-gradient px-6 py-14 text-center sm:px-12 lg:py-20">
-            <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Need Foreign Currency Today?
-            </h2>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link href="/rates" className="btn btn-white">
-                Check Exchange Rates
-              </Link>
-              <a href={`tel:${PHONE_TEL}`} className="btn btn-ghost-light">
-                Call {PHONE_DISPLAY}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CallBand />
     </>
   );
 }

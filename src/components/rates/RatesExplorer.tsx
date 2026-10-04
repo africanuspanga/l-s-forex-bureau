@@ -12,7 +12,7 @@ const FILTERS: { value: CategoryFilter; label: string }[] = [
 ];
 
 function formatRate(value: number): string {
-  const decimals = value < 10 ? 2 : 0;
+  const decimals = value < 100 ? 2 : 0;
   return value.toLocaleString("en-TZ", {
     minimumFractionDigits: decimals,
     maximumFractionDigits: decimals,
@@ -104,18 +104,13 @@ export default function RatesExplorer({ rates }: { rates: CurrencyRate[] }) {
             {visible.map((r) => (
               <tr key={r.currency.code} className="transition-colors hover:bg-surface/60">
                 <td className="px-6 py-4">
-                  <span className="flex items-center gap-3 font-semibold text-foreground">
-                    <span aria-hidden="true" className="text-xl leading-none">
-                      {r.currency.flag}
-                    </span>
-                    {r.currency.code}
-                  </span>
+                  <span className="font-display text-base text-foreground">{r.currency.code}</span>
                 </td>
                 <td className="px-6 py-4 text-muted">{r.currency.name}</td>
-                <td className="tabular px-6 py-4 text-right font-semibold text-foreground">
+                <td className="tabular px-6 py-4 text-right font-mono font-semibold text-foreground">
                   {formatRate(r.buyingRate)}
                 </td>
-                <td className="tabular px-6 py-4 text-right font-semibold text-primary">
+                <td className="tabular px-6 py-4 text-right font-mono font-semibold text-primary">
                   {formatRate(r.sellingRate)}
                 </td>
                 <td className="px-6 py-4 text-right text-muted">
@@ -138,11 +133,8 @@ export default function RatesExplorer({ rates }: { rates: CurrencyRate[] }) {
           <div key={r.currency.code} className="card p-5">
             <div className="flex items-center justify-between">
               <span className="flex items-center gap-2.5">
-                <span aria-hidden="true" className="text-2xl leading-none">
-                  {r.currency.flag}
-                </span>
                 <span>
-                  <span className="block font-semibold text-foreground">
+                  <span className="font-display block text-base text-foreground">
                     {r.currency.code}
                   </span>
                   <span className="block text-xs text-muted">{r.currency.name}</span>
@@ -151,7 +143,7 @@ export default function RatesExplorer({ rates }: { rates: CurrencyRate[] }) {
               <span className="text-xs text-muted">{timeAgoLabel(r.effectiveAt)}</span>
             </div>
             <div className="mt-4 grid grid-cols-2 gap-3">
-              <div className="rounded-xl bg-surface px-4 py-3">
+              <div className="rounded-md bg-surface px-4 py-3">
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted">
                   We Buy
                 </p>
@@ -159,7 +151,7 @@ export default function RatesExplorer({ rates }: { rates: CurrencyRate[] }) {
                   {formatRate(r.buyingRate)}
                 </p>
               </div>
-              <div className="rounded-xl bg-surface px-4 py-3">
+              <div className="rounded-md bg-surface px-4 py-3">
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted">
                   We Sell
                 </p>

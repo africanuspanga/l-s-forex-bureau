@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Sora } from "next/font/google";
+import { Archivo, Martian_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,15 +9,17 @@ import RatesTicker from "@/components/RatesTicker";
 import { PHONE_TEL } from "@/lib/format";
 import { getFeaturedRates } from "@/lib/rates";
 
-const inter = Inter({
-  variable: "--font-inter",
+// Width axis: normal for body copy, stretched to 125 for display capitals.
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
+  axes: ["wdth"],
 });
 
-const sora = Sora({
-  variable: "--font-sora",
+const martian = Martian_Mono({
+  variable: "--font-martian",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  axes: ["wdth"],
 });
 
 export const metadata: Metadata = {
@@ -47,7 +49,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   const rates = await getFeaturedRates();
 
   return (
-    <html lang="en" className={`${inter.variable} ${sora.variable} h-full antialiased`}>
+    <html lang="en" className={`${archivo.variable} ${martian.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <script
           type="application/ld+json"

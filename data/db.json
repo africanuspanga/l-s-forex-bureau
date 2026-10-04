@@ -238,7 +238,7 @@
       "buyingRate": 2610,
       "sellingRate": 2670,
       "effectiveAt": "2026-08-25T13:29:23.721Z",
-      "status": "published",
+      "status": "archived",
       "source": "bot_suggestion",
       "createdBy": "system-bot-update",
       "createdAt": "2026-08-25T13:29:23.721Z"
@@ -248,7 +248,7 @@
       "buyingRate": 3050,
       "sellingRate": 3115,
       "effectiveAt": "2026-08-25T13:29:23.721Z",
-      "status": "published",
+      "status": "archived",
       "source": "bot_suggestion",
       "createdBy": "system-bot-update",
       "createdAt": "2026-08-25T13:29:23.721Z"
@@ -258,7 +258,7 @@
       "buyingRate": 3565,
       "sellingRate": 3645,
       "effectiveAt": "2026-08-25T13:29:23.721Z",
-      "status": "published",
+      "status": "archived",
       "source": "bot_suggestion",
       "createdBy": "system-bot-update",
       "createdAt": "2026-08-25T13:29:23.721Z"
@@ -268,7 +268,7 @@
       "buyingRate": 696,
       "sellingRate": 711,
       "effectiveAt": "2026-08-25T13:29:23.721Z",
-      "status": "published",
+      "status": "archived",
       "source": "bot_suggestion",
       "createdBy": "system-bot-update",
       "createdAt": "2026-08-25T13:29:23.721Z"
@@ -278,7 +278,7 @@
       "buyingRate": 389,
       "sellingRate": 397,
       "effectiveAt": "2026-08-25T13:29:23.721Z",
-      "status": "published",
+      "status": "archived",
       "source": "bot_suggestion",
       "createdBy": "system-bot-update",
       "createdAt": "2026-08-25T13:29:23.721Z"
@@ -288,7 +288,7 @@
       "buyingRate": 20.2,
       "sellingRate": 20.6,
       "effectiveAt": "2026-08-25T13:29:23.721Z",
-      "status": "published",
+      "status": "archived",
       "source": "bot_suggestion",
       "createdBy": "system-bot-update",
       "createdAt": "2026-08-25T13:29:23.721Z"
@@ -298,7 +298,7 @@
       "buyingRate": 0.7,
       "sellingRate": 0.71,
       "effectiveAt": "2026-08-25T13:29:23.721Z",
-      "status": "published",
+      "status": "archived",
       "source": "bot_suggestion",
       "createdBy": "system-bot-update",
       "createdAt": "2026-08-25T13:29:23.721Z"
@@ -308,7 +308,7 @@
       "buyingRate": 1890,
       "sellingRate": 1930,
       "effectiveAt": "2026-08-25T13:29:23.721Z",
-      "status": "published",
+      "status": "archived",
       "source": "bot_suggestion",
       "createdBy": "system-bot-update",
       "createdAt": "2026-08-25T13:29:23.721Z"
@@ -318,7 +318,7 @@
       "buyingRate": 3255,
       "sellingRate": 3325,
       "effectiveAt": "2026-08-25T13:29:23.721Z",
-      "status": "published",
+      "status": "archived",
       "source": "bot_suggestion",
       "createdBy": "system-bot-update",
       "createdAt": "2026-08-25T13:29:23.721Z"
@@ -328,7 +328,7 @@
       "buyingRate": 1870,
       "sellingRate": 1915,
       "effectiveAt": "2026-08-25T13:29:23.721Z",
-      "status": "published",
+      "status": "archived",
       "source": "bot_suggestion",
       "createdBy": "system-bot-update",
       "createdAt": "2026-08-25T13:29:23.721Z"
@@ -338,10 +338,120 @@
       "buyingRate": 163,
       "sellingRate": 167,
       "effectiveAt": "2026-08-25T13:29:23.721Z",
-      "status": "published",
+      "status": "archived",
       "source": "bot_suggestion",
       "createdBy": "system-bot-update",
       "createdAt": "2026-08-25T13:29:23.721Z"
+    },
+    {
+      "currencyCode": "USD",
+      "buyingRate": 2610,
+      "sellingRate": 2665,
+      "effectiveAt": "2026-10-04T15:14:25.720Z",
+      "status": "published",
+      "source": "bot_suggestion",
+      "createdBy": "system-bot-update",
+      "createdAt": "2026-10-04T15:14:25.720Z"
+    },
+    {
+      "currencyCode": "EUR",
+      "buyingRate": 2935,
+      "sellingRate": 3000,
+      "effectiveAt": "2026-10-04T15:14:25.720Z",
+      "status": "published",
+      "source": "bot_suggestion",
+      "createdBy": "system-bot-update",
+      "createdAt": "2026-10-04T15:14:25.720Z"
+    },
+    {
+      "currencyCode": "GBP",
+      "buyingRate": 3450,
+      "sellingRate": 3525,
+      "effectiveAt": "2026-10-04T15:14:25.720Z",
+      "status": "published",
+      "source": "bot_suggestion",
+      "createdBy": "system-bot-update",
+      "createdAt": "2026-10-04T15:14:25.720Z"
+    },
+    {
+      "currencyCode": "SAR",
+      "buyingRate": 694,
+      "sellingRate": 710,
+      "effectiveAt": "2026-10-04T15:14:25.720Z",
+      "status": "published",
+      "source": "bot_suggestion",
+      "createdBy": "system-bot-update",
+      "createdAt": "2026-10-04T15:14:25.720Z"
+    },
+    {
+      "currencyCode": "CNY",
+      "buyingRate": 389,
+      "sellingRate": 398,
+      "effectiveAt": "2026-10-04T15:14:25.720Z",
+      "status": "published",
+      "source": "bot_suggestion",
+      "createdBy": "system-bot-update",
+      "createdAt": "2026-10-04T15:14:25.720Z"
+    },
+    {
+      "currencyCode": "KES",
+      "buyingRate": 20.1,
+      "sellingRate": 20.5,
+      "effectiveAt": "2026-10-04T15:14:25.720Z",
+      "status": "published",
+      "source": "bot_suggestion",
+      "createdBy": "system-bot-update",
+      "createdAt": "2026-10-04T15:14:25.720Z"
+    },
+    {
+      "currencyCode": "UGX",
+      "buyingRate": 0.65,
+      "sellingRate": 0.67,
+      "effectiveAt": "2026-10-04T15:14:25.720Z",
+      "status": "published",
+      "source": "bot_suggestion",
+      "createdBy": "system-bot-update",
+      "createdAt": "2026-10-04T15:14:25.720Z"
+    },
+    {
+      "currencyCode": "CAD",
+      "buyingRate": 1830,
+      "sellingRate": 1875,
+      "effectiveAt": "2026-10-04T15:14:25.720Z",
+      "status": "published",
+      "source": "bot_suggestion",
+      "createdBy": "system-bot-update",
+      "createdAt": "2026-10-04T15:14:25.720Z"
+    },
+    {
+      "currencyCode": "CHF",
+      "buyingRate": 3150,
+      "sellingRate": 3220,
+      "effectiveAt": "2026-10-04T15:14:25.720Z",
+      "status": "published",
+      "source": "bot_suggestion",
+      "createdBy": "system-bot-update",
+      "createdAt": "2026-10-04T15:14:25.720Z"
+    },
+    {
+      "currencyCode": "AUD",
+      "buyingRate": 1815,
+      "sellingRate": 1860,
+      "effectiveAt": "2026-10-04T15:14:25.720Z",
+      "status": "published",
+      "source": "bot_suggestion",
+      "createdBy": "system-bot-update",
+      "createdAt": "2026-10-04T15:14:25.720Z"
+    },
+    {
+      "currencyCode": "ZAR",
+      "buyingRate": 157,
+      "sellingRate": 160,
+      "effectiveAt": "2026-10-04T15:14:25.720Z",
+      "status": "published",
+      "source": "bot_suggestion",
+      "createdBy": "system-bot-update",
+      "createdAt": "2026-10-04T15:14:25.720Z"
     }
   ],
   "rateHistory": [
@@ -4216,6 +4326,127 @@
       "user": "system-bot-update",
       "source": "bot_suggestion",
       "timestamp": "2026-08-25T13:29:23.721Z"
+    },
+    {
+      "id": "hist-USD-2026-10-04T15:14:25.720Z",
+      "currencyCode": "USD",
+      "previousBuyingRate": 2610,
+      "newBuyingRate": 2610,
+      "previousSellingRate": 2670,
+      "newSellingRate": 2665,
+      "user": "system-bot-update",
+      "source": "bot_suggestion",
+      "timestamp": "2026-10-04T15:14:25.720Z"
+    },
+    {
+      "id": "hist-EUR-2026-10-04T15:14:25.720Z",
+      "currencyCode": "EUR",
+      "previousBuyingRate": 3050,
+      "newBuyingRate": 2935,
+      "previousSellingRate": 3115,
+      "newSellingRate": 3000,
+      "user": "system-bot-update",
+      "source": "bot_suggestion",
+      "timestamp": "2026-10-04T15:14:25.720Z"
+    },
+    {
+      "id": "hist-GBP-2026-10-04T15:14:25.720Z",
+      "currencyCode": "GBP",
+      "previousBuyingRate": 3565,
+      "newBuyingRate": 3450,
+      "previousSellingRate": 3645,
+      "newSellingRate": 3525,
+      "user": "system-bot-update",
+      "source": "bot_suggestion",
+      "timestamp": "2026-10-04T15:14:25.720Z"
+    },
+    {
+      "id": "hist-SAR-2026-10-04T15:14:25.720Z",
+      "currencyCode": "SAR",
+      "previousBuyingRate": 696,
+      "newBuyingRate": 694,
+      "previousSellingRate": 711,
+      "newSellingRate": 710,
+      "user": "system-bot-update",
+      "source": "bot_suggestion",
+      "timestamp": "2026-10-04T15:14:25.720Z"
+    },
+    {
+      "id": "hist-CNY-2026-10-04T15:14:25.720Z",
+      "currencyCode": "CNY",
+      "previousBuyingRate": 389,
+      "newBuyingRate": 389,
+      "previousSellingRate": 397,
+      "newSellingRate": 398,
+      "user": "system-bot-update",
+      "source": "bot_suggestion",
+      "timestamp": "2026-10-04T15:14:25.720Z"
+    },
+    {
+      "id": "hist-KES-2026-10-04T15:14:25.720Z",
+      "currencyCode": "KES",
+      "previousBuyingRate": 20.2,
+      "newBuyingRate": 20.1,
+      "previousSellingRate": 20.6,
+      "newSellingRate": 20.5,
+      "user": "system-bot-update",
+      "source": "bot_suggestion",
+      "timestamp": "2026-10-04T15:14:25.720Z"
+    },
+    {
+      "id": "hist-UGX-2026-10-04T15:14:25.720Z",
+      "currencyCode": "UGX",
+      "previousBuyingRate": 0.7,
+      "newBuyingRate": 0.65,
+      "previousSellingRate": 0.71,
+      "newSellingRate": 0.67,
+      "user": "system-bot-update",
+      "source": "bot_suggestion",
+      "timestamp": "2026-10-04T15:14:25.720Z"
+    },
+    {
+      "id": "hist-CAD-2026-10-04T15:14:25.720Z",
+      "currencyCode": "CAD",
+      "previousBuyingRate": 1890,
+      "newBuyingRate": 1830,
+      "previousSellingRate": 1930,
+      "newSellingRate": 1875,
+      "user": "system-bot-update",
+      "source": "bot_suggestion",
+      "timestamp": "2026-10-04T15:14:25.720Z"
+    },
+    {
+      "id": "hist-CHF-2026-10-04T15:14:25.720Z",
+      "currencyCode": "CHF",
+      "previousBuyingRate": 3255,
+      "newBuyingRate": 3150,
+      "previousSellingRate": 3325,
+      "newSellingRate": 3220,
+      "user": "system-bot-update",
+      "source": "bot_suggestion",
+      "timestamp": "2026-10-04T15:14:25.720Z"
+    },
+    {
+      "id": "hist-AUD-2026-10-04T15:14:25.720Z",
+      "currencyCode": "AUD",
+      "previousBuyingRate": 1870,
+      "newBuyingRate": 1815,
+      "previousSellingRate": 1915,
+      "newSellingRate": 1860,
+      "user": "system-bot-update",
+      "source": "bot_suggestion",
+      "timestamp": "2026-10-04T15:14:25.720Z"
+    },
+    {
+      "id": "hist-ZAR-2026-10-04T15:14:25.720Z",
+      "currencyCode": "ZAR",
+      "previousBuyingRate": 163,
+      "newBuyingRate": 157,
+      "previousSellingRate": 167,
+      "newSellingRate": 160,
+      "user": "system-bot-update",
+      "source": "bot_suggestion",
+      "timestamp": "2026-10-04T15:14:25.720Z"
     }
   ],
   "botReferenceRates": [
@@ -4909,6 +5140,479 @@
       "fetchedAt": "2026-08-25T13:29:23.721Z",
       "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
       "validationStatus": "valid"
+    },
+    {
+      "id": "bot-AED-2026-10-04",
+      "currencyCode": "AED",
+      "buyingRate": 714.9403,
+      "sellingRate": 722.0897,
+      "meanRate": 718.515,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-ATS-2026-10-04",
+      "currencyCode": "ATS",
+      "buyingRate": 168.328,
+      "sellingRate": 170.0113,
+      "meanRate": 169.1696,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-AUD-2026-10-04",
+      "currencyCode": "AUD",
+      "buyingRate": 1830.1422,
+      "sellingRate": 1848.4436,
+      "meanRate": 1839.2929,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-BIF-2026-10-04",
+      "currencyCode": "BIF",
+      "buyingRate": 0.8726,
+      "sellingRate": 0.8814,
+      "meanRate": 0.877,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-BWP-2026-10-04",
+      "currencyCode": "BWP",
+      "buyingRate": 201.4233,
+      "sellingRate": 203.4375,
+      "meanRate": 202.4304,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-CAD-2026-10-04",
+      "currencyCode": "CAD",
+      "buyingRate": 1845.0916,
+      "sellingRate": 1863.5425,
+      "meanRate": 1854.317,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-CHF-2026-10-04",
+      "currencyCode": "CHF",
+      "buyingRate": 3171.6411,
+      "sellingRate": 3203.3575,
+      "meanRate": 3187.4993,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-CNY-2026-10-04",
+      "currencyCode": "CNY",
+      "buyingRate": 391.6891,
+      "sellingRate": 395.606,
+      "meanRate": 393.6476,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-CUC-2026-10-04",
+      "currencyCode": "CUC",
+      "buyingRate": 109.4216,
+      "sellingRate": 110.5158,
+      "meanRate": 109.9687,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-DKK-2026-10-04",
+      "currencyCode": "DKK",
+      "buyingRate": 395.2974,
+      "sellingRate": 399.2504,
+      "meanRate": 397.2739,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-DZD-2026-10-04",
+      "currencyCode": "DZD",
+      "buyingRate": 19.6108,
+      "sellingRate": 19.8069,
+      "meanRate": 19.7089,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-EUR-2026-10-04",
+      "currencyCode": "EUR",
+      "buyingRate": 2954.6463,
+      "sellingRate": 2984.1927,
+      "meanRate": 2969.4195,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-GBP-2026-10-04",
+      "currencyCode": "GBP",
+      "buyingRate": 3472.5169,
+      "sellingRate": 3507.2421,
+      "meanRate": 3489.8795,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-HKD-2026-10-04",
+      "currencyCode": "HKD",
+      "buyingRate": 334.6653,
+      "sellingRate": 338.012,
+      "meanRate": 336.3387,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-IDR-2026-10-04",
+      "currencyCode": "IDR",
+      "buyingRate": 0.1469,
+      "sellingRate": 0.1484,
+      "meanRate": 0.1476,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-INR-2026-10-04",
+      "currencyCode": "INR",
+      "buyingRate": 27.2589,
+      "sellingRate": 27.5315,
+      "meanRate": 27.3952,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-IQD-2026-10-04",
+      "currencyCode": "IQD",
+      "buyingRate": 2.0039,
+      "sellingRate": 2.0239,
+      "meanRate": 2.0139,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-IRR-2026-10-04",
+      "currencyCode": "IRR",
+      "buyingRate": 0.0015,
+      "sellingRate": 0.0015,
+      "meanRate": 0.0015,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-JPY-2026-10-04",
+      "currencyCode": "JPY",
+      "buyingRate": 16.6801,
+      "sellingRate": 16.8469,
+      "meanRate": 16.7635,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-KES-2026-10-04",
+      "currencyCode": "KES",
+      "buyingRate": 20.2242,
+      "sellingRate": 20.4265,
+      "meanRate": 20.3254,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-KRW-2026-10-04",
+      "currencyCode": "KRW",
+      "buyingRate": 1.9512,
+      "sellingRate": 1.9707,
+      "meanRate": 1.9609,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-KWD-2026-10-04",
+      "currencyCode": "KWD",
+      "buyingRate": 8526.3598,
+      "sellingRate": 8611.6234,
+      "meanRate": 8568.9916,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-MWK-2026-10-04",
+      "currencyCode": "MWK",
+      "buyingRate": 1.5004,
+      "sellingRate": 1.5154,
+      "meanRate": 1.5079,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-MYR-2026-10-04",
+      "currencyCode": "MYR",
+      "buyingRate": 642.397,
+      "sellingRate": 648.8209,
+      "meanRate": 645.609,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-MZM-2026-10-04",
+      "currencyCode": "MZM",
+      "buyingRate": 41.0652,
+      "sellingRate": 41.4758,
+      "meanRate": 41.2705,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-NAD-2026-10-04",
+      "currencyCode": "NAD",
+      "buyingRate": 157.7343,
+      "sellingRate": 159.3117,
+      "meanRate": 158.523,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-NGN-2026-10-04",
+      "currencyCode": "NGN",
+      "buyingRate": 1.9731,
+      "sellingRate": 1.9928,
+      "meanRate": 1.983,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-NLG-2026-10-04",
+      "currencyCode": "NLG",
+      "buyingRate": 1051.0782,
+      "sellingRate": 1061.589,
+      "meanRate": 1056.3336,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-NOK-2026-10-04",
+      "currencyCode": "NOK",
+      "buyingRate": 272.8067,
+      "sellingRate": 275.5347,
+      "meanRate": 274.1707,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-NZD-2026-10-04",
+      "currencyCode": "NZD",
+      "buyingRate": 1477.7171,
+      "sellingRate": 1492.4942,
+      "meanRate": 1485.1056,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-PKR-2026-10-04",
+      "currencyCode": "PKR",
+      "buyingRate": 9.4772,
+      "sellingRate": 9.5719,
+      "meanRate": 9.5245,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-QAR-2026-10-04",
+      "currencyCode": "QAR",
+      "buyingRate": 720.4123,
+      "sellingRate": 727.6164,
+      "meanRate": 724.0143,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-RWF-2026-10-04",
+      "currencyCode": "RWF",
+      "buyingRate": 1.7755,
+      "sellingRate": 1.7933,
+      "meanRate": 1.7844,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-SAR-2026-10-04",
+      "currencyCode": "SAR",
+      "buyingRate": 699.4217,
+      "sellingRate": 706.416,
+      "meanRate": 702.9188,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-SDR-2026-10-04",
+      "currencyCode": "SDR",
+      "buyingRate": 3555.974,
+      "sellingRate": 3591.5338,
+      "meanRate": 3573.7539,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-SEK-2026-10-04",
+      "currencyCode": "SEK",
+      "buyingRate": 261.8891,
+      "sellingRate": 264.508,
+      "meanRate": 263.1985,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-SGD-2026-10-04",
+      "currencyCode": "SGD",
+      "buyingRate": 2053.9018,
+      "sellingRate": 2074.4408,
+      "meanRate": 2064.1713,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-TRY-2026-10-04",
+      "currencyCode": "TRY",
+      "buyingRate": 53.4312,
+      "sellingRate": 53.9656,
+      "meanRate": 53.6984,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-UGX-2026-10-04",
+      "currencyCode": "UGX",
+      "buyingRate": 0.6582,
+      "sellingRate": 0.6648,
+      "meanRate": 0.6615,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-USD-2026-10-04",
+      "currencyCode": "USD",
+      "buyingRate": 2626.1188,
+      "sellingRate": 2652.38,
+      "meanRate": 2639.2494,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-ZAR-2026-10-04",
+      "currencyCode": "ZAR",
+      "buyingRate": 157.7997,
+      "sellingRate": 159.3777,
+      "meanRate": 158.5887,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-ZMW-2026-10-04",
+      "currencyCode": "ZMW",
+      "buyingRate": 133.443,
+      "sellingRate": 134.7775,
+      "meanRate": 134.1102,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
+    },
+    {
+      "id": "bot-ZWD-2026-10-04",
+      "currencyCode": "ZWD",
+      "buyingRate": 6.8927,
+      "sellingRate": 6.9616,
+      "meanRate": 6.9272,
+      "transactionDate": "2026-10-04",
+      "fetchedAt": "2026-10-04T15:14:25.720Z",
+      "rawSource": "https://www.bot.go.tz/ExchangeRate/excRates",
+      "validationStatus": "valid"
     }
   ],
   "marginRules": [
@@ -5067,9 +5771,9 @@
     }
   ],
   "meta": {
-    "lastBotSyncAt": "2026-08-25T13:29:23.721Z",
+    "lastBotSyncAt": "2026-10-04T15:14:25.720Z",
     "lastBotSyncStatus": "ok",
-    "lastBotSyncMessage": "BoT reference import ok: 43 currencies imported for 2026-08-25.",
-    "lastPublishedAt": "2026-08-25T13:29:23.721Z"
+    "lastBotSyncMessage": "BoT reference import ok: 43 currencies imported for 2026-10-04.",
+    "lastPublishedAt": "2026-10-04T15:14:25.720Z"
   }
 }

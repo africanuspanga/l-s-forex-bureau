@@ -51,17 +51,17 @@ interface MobileBottomNavProps {
 
 export default function MobileBottomNav({
   items,
-  activeClasses = "bg-primary/10 text-primary",
+  activeClasses = "text-primary",
 }: MobileBottomNavProps) {
   const pathname = usePathname();
 
   return (
     <nav
       aria-label="Primary"
-      className="fixed inset-x-3 bottom-3 z-40 lg:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 border-t border-primary/15 bg-white lg:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
-      <ul className="mx-auto flex max-w-sm items-center justify-between rounded-full border border-black/5 bg-white/95 p-1.5 shadow-[0_8px_30px_-8px_rgba(0,0,0,0.25)] backdrop-blur-md">
+      <ul className="flex items-stretch">
         {items.map((item) => {
           const active =
             item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
@@ -70,10 +70,11 @@ export default function MobileBottomNav({
               <Link
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`flex items-center justify-center gap-1.5 rounded-full px-2 py-2.5 text-xs font-semibold transition-all ${
-                  active ? `${activeClasses}` : "text-muted"
+                className={`relative flex flex-col items-center gap-1 py-2.5 text-[11px] font-semibold ${
+                  active ? activeClasses : "text-muted"
                 }`}
               >
+                {active && <span className="absolute inset-x-4 top-0 h-[3px] bg-current" aria-hidden="true" />}
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -84,7 +85,7 @@ export default function MobileBottomNav({
                 >
                   {ICONS[item.icon]}
                 </svg>
-                {active && <span className="whitespace-nowrap">{item.label}</span>}
+                {item.label}
               </Link>
             </li>
           );

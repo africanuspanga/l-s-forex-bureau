@@ -1,41 +1,29 @@
 @import "tailwindcss";
 
+/*
+ * L&S — design language: the counter receipt.
+ * Solid cobalt, the logo's cyan, wide geometric capitals (Archivo stretched)
+ * that echo the L&S FOREX BUREAU wordmark, and a thermal-paper receipt set in
+ * a mono face for anything that is a number you will be handed.
+ */
 @theme {
-  /* Brand */
   --color-primary: #013ae1;
   --color-primary-dark: #012cb0;
   --color-primary-deep: #0a1440;
   --color-accent: #09c3fe;
   --color-accent-soft: #bfefff;
 
-  /* Surfaces */
   --color-background: #ffffff;
-  --color-surface: #f2f6ff;
-  --color-surface-alt: #e8f0fe;
+  --color-surface: #f2f5fc;
+  --color-surface-alt: #e6ecfa;
+  --color-slip: #fbfbf7;
 
-  /* Text */
   --color-foreground: #0a1440;
-  --color-muted: #5a6a92;
+  --color-muted: #56658c;
 
-  /* Fonts (wired via next/font in layout.tsx) */
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-sora), var(--font-inter), ui-sans-serif, sans-serif;
-
-  /* Radii */
-  --radius-card: 1rem;
-
-  --animate-fade-up: fade-up 0.7s ease-out both;
-}
-
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-archivo), ui-sans-serif, sans-serif;
+  --font-mono: var(--font-martian), ui-monospace, monospace;
 }
 
 html {
@@ -54,61 +42,69 @@ body {
   color: var(--color-primary-deep);
 }
 
-/* Brand gradient helper — kept for the one signature CTA band, not for every surface */
-.bg-brand-gradient {
-  background-image: linear-gradient(135deg, var(--color-primary) 0%, #0150f0 45%, var(--color-accent) 130%);
-}
-
-/* Solid brand band for inner-page hero strips (no glow blobs) */
-.bg-hero-mesh {
-  background-image: linear-gradient(120deg, var(--color-primary-deep) 0%, var(--color-primary) 70%, var(--color-primary-dark) 100%);
-}
-
-/* Photo hero scrim — real photography, not a gradient mesh */
-.hero-scrim {
-  background-image:
-    linear-gradient(100deg, rgba(1, 10, 60, 0.94) 0%, rgba(1, 20, 90, 0.8) 42%, rgba(1, 40, 130, 0.4) 78%, rgba(1, 58, 225, 0.18) 100%),
-    linear-gradient(0deg, rgba(1, 10, 60, 0.55) 0%, transparent 35%);
-}
-
-.text-gradient {
-  background-image: linear-gradient(100deg, var(--color-primary), var(--color-accent));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Whisper-level shadows only — no colored glow */
-.card-shadow {
-  box-shadow: 0 4px 24px rgba(10, 20, 64, 0.05);
-}
-
-.card-shadow-lg {
-  box-shadow: 0 12px 40px rgba(10, 20, 64, 0.09);
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
 }
 
 .tabular {
   font-variant-numeric: tabular-nums;
 }
 
+/* Wide capitals — the wordmark's stance. */
+.font-display {
+  font-variation-settings: "wdth" 125;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+/* Legacy helpers, now flat: no gradients anywhere on this site. */
+.bg-hero-mesh,
+.bg-brand-gradient {
+  background: var(--color-primary);
+}
+.text-gradient {
+  color: var(--color-primary);
+}
+.card-shadow,
+.card-shadow-lg {
+  box-shadow: none;
+}
+
+/* Mono kicker — reads like a field label on a slip. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+}
+.eyebrow-light,
+.eyebrow-accent {
+  color: var(--color-accent);
+}
+
 /* ---------------------------------------------------------------- */
-/* Buttons — 12px radius max, never pill                             */
+/* Buttons                                                            */
 /* ---------------------------------------------------------------- */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-radius: 12px;
-  padding: 13px 24px;
+  border-radius: 6px;
+  border: 1.5px solid transparent;
+  padding: 13px 22px;
   font-size: 0.9375rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.2;
   white-space: nowrap;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
-}
-.btn:active {
-  transform: scale(0.98);
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 .btn-primary {
   background: var(--color-primary);
@@ -122,12 +118,12 @@ body {
   color: var(--color-primary-deep);
 }
 .btn-accent:hover {
-  background: var(--color-accent-soft);
+  background: #ffffff;
 }
 .btn-outline {
-  background: #ffffff;
+  background: transparent;
   color: var(--color-primary-deep);
-  border: 1px solid rgba(1, 20, 64, 0.15);
+  border-color: rgba(10, 20, 64, 0.2);
 }
 .btn-outline:hover {
   border-color: var(--color-primary);
@@ -138,71 +134,79 @@ body {
   color: #ffffff;
 }
 .btn-dark:hover {
-  background: #0d1b52;
+  background: var(--color-primary);
 }
 .btn-white {
   background: #ffffff;
   color: var(--color-primary);
-  box-shadow: 0 4px 24px rgba(10, 20, 64, 0.08);
 }
 .btn-white:hover {
-  background: var(--color-surface);
+  background: var(--color-accent-soft);
 }
 .btn-ghost-light {
-  background: rgba(255, 255, 255, 0.08);
+  background: transparent;
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.45);
 }
 .btn-ghost-light:hover {
-  background: rgba(255, 255, 255, 0.16);
+  border-color: #ffffff;
 }
 
-/* ---------------------------------------------------------------- */
-/* Cards                                                              */
-/* ---------------------------------------------------------------- */
 .card {
-  border-radius: 16px;
-  border: 1px solid rgba(10, 20, 64, 0.06);
+  border-radius: 8px;
+  border: 1px solid rgba(10, 20, 64, 0.1);
   background: #ffffff;
-  box-shadow: 0 4px 24px rgba(10, 20, 64, 0.04);
 }
 
-/* ---------------------------------------------------------------- */
-/* Eyebrow label — quiet kicker, not a pill badge                    */
-/* ---------------------------------------------------------------- */
-.eyebrow {
+.badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-primary);
-}
-.eyebrow::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: currentColor;
-  flex-shrink: 0;
-}
-.eyebrow-light {
-  color: #ffffff;
-}
-.eyebrow-light::before {
-  background: var(--color-accent);
-}
-.eyebrow-accent {
-  color: var(--color-accent);
-}
-.eyebrow-accent::before {
-  background: var(--color-accent);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  background: var(--color-surface);
+  color: var(--color-muted);
 }
 
 /* ---------------------------------------------------------------- */
-/* Live rates ticker — fixed strip under the navbar                  */
+/* The receipt — thermal paper with a torn, zig-zag bottom edge       */
+/* ---------------------------------------------------------------- */
+.receipt-shadow {
+  filter: drop-shadow(0 24px 30px rgba(5, 12, 50, 0.35)) drop-shadow(0 2px 2px rgba(5, 12, 50, 0.2));
+}
+.receipt {
+  --tooth: 14px;
+  background: var(--color-slip);
+  color: var(--color-primary-deep);
+  font-family: var(--font-mono);
+  padding-bottom: calc(var(--tooth) + 12px);
+  mask:
+    conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) bottom / var(--tooth) var(--tooth) repeat-x,
+    linear-gradient(#000 0 0) top / 100% calc(100% - var(--tooth) + 1px) no-repeat;
+}
+.receipt-rule {
+  border-top: 1.5px dashed rgba(10, 20, 64, 0.28);
+}
+.receipt-field {
+  width: 100%;
+  border: 0;
+  border-bottom: 1.5px solid rgba(10, 20, 64, 0.3);
+  background: transparent;
+  padding: 6px 0;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary-deep);
+  outline: none;
+  border-radius: 0;
+}
+.receipt-field:focus {
+  border-bottom-color: var(--color-primary);
+}
+
+/* ---------------------------------------------------------------- */
+/* Live rates ticker — navy strip under the cobalt navbar             */
 /* ---------------------------------------------------------------- */
 .ticker-bar {
   position: fixed;
@@ -212,7 +216,7 @@ body {
   display: flex;
   align-items: stretch;
   height: 40px;
-  background: var(--color-primary);
+  background: var(--color-primary-deep);
   color: #ffffff;
   overflow: hidden;
 }
@@ -221,12 +225,14 @@ body {
   align-items: center;
   flex-shrink: 0;
   padding: 0 16px;
-  font-size: 11px;
-  font-weight: 700;
+  background: var(--color-accent);
+  color: var(--color-primary-deep);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   white-space: nowrap;
-  border-right: 1px solid rgba(255, 255, 255, 0.22);
 }
 .ticker-viewport {
   flex: 1;
@@ -238,7 +244,7 @@ body {
   display: flex;
   align-items: center;
   white-space: nowrap;
-  animation: ticker-scroll 34s linear infinite;
+  animation: ticker-scroll 40s linear infinite;
   will-change: transform;
 }
 .ticker-bar:hover .ticker-track {
@@ -247,16 +253,17 @@ body {
 .ticker-item {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 0 18px;
-  font-size: 12.5px;
+  gap: 10px;
+  padding: 0 20px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
   font-variant-numeric: tabular-nums;
 }
 .ticker-divider {
   width: 1px;
   height: 14px;
-  margin-left: 18px;
-  background: rgba(255, 255, 255, 0.3);
+  margin-left: 20px;
+  background: rgba(255, 255, 255, 0.2);
 }
 @keyframes ticker-scroll {
   from {
@@ -273,16 +280,4 @@ body {
   .ticker-viewport {
     overflow-x: auto;
   }
-}
-
-/* Small status badges (e.g. "updated 3h ago") — rect, not pill */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  border-radius: 8px;
-  padding: 5px 10px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  background: var(--color-surface);
-  color: var(--color-muted);
 }

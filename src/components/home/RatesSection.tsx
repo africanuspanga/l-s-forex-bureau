@@ -1,80 +1,119 @@
 import Link from "next/link";
 import {
   formatDateTime,
+  formatRateNumber,
   getRateTrend,
-  timeAgo,
   type CurrencyRate,
 } from "@/lib/rates";
-import RateCard from "./RateCard";
-import type { TrendPoint } from "./TrendChart";
 
 interface RatesSectionProps {
   rates: CurrencyRate[];
   lastUpdated: string | null;
 }
 
-export default async function RatesSection({ rates, lastUpdated }: RatesSectionProps) {
-  const trends = await Promise.all(
-    rates.map(async (rate) => {
-      const [trend7, trend30] = await Promise.all([
-        getRateTrend(rate.currency.code, 7),
-        getRateTrend(rate.currency.code, 30),
-      ]);
-      return { code: rate.currency.code, trend7, trend30 };
-    })
+/** 7-day selling-rate line, drawn inline in the table row. */
+function Sparkline({ points }: { points: number[] }) {
+  if (points.length < 2) return null;
+  const w = 96;
+  const h = 28;
+  const min = Math.min(...points);
+  const max = Math.max(...points);
+  const span = max - min || 1;
+  const d = points
+    .map((v, i) => `${i === 0 ? "M" : "L"}${((i / (points.length - 1)) * w).toFixed(1)},${(h - 3 - ((v - min) / span) * (h - 6)).toFixed(1)}`)
+    .join(" ");
+  return (
+    <svg viewBox={`0 0 ${w} ${h}`} className="h-7 w-24" aria-hidden="true">
+      <path d={d} fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinejoin="round" strokeLinecap="round" />
+    </svg>
   );
-  const trendMap = new Map<string, { trend7: TrendPoint[]; trend30: TrendPoint[] }>(
-    trends.map((t) => [t.code, { trend7: t.trend7, trend30: t.trend30 }])
+}
+
+function Change({ rate }: { rate: CurrencyRate }) {
+  if (rate.changePercent === null || rate.trend === null) {
+    return <span className="text-muted">—</span>;
+  }
+  const sign = rate.changePercent > 0 ? "+" : "";
+  const color = rate.trend === "up" ? "text-emerald-700" : rate.trend === "down" ? "text-red-700" : "text-muted";
+  return (
+    <span className={`tabular ${color}`}>
+      {sign}
+      {rate.changePercent.toFixed(2)}%
+    </span>
+  );
+}
+
+export default async function RatesSection({ rates, lastUpdated }: RatesSectionProps) {
+  const trends = new Map(
+    await Promise.all(
+      rates.map(async (rate) => {
+        const series = await getRateTrend(rate.currency.code, 7);
+        return [rate.currency.code, series.map((p) => p.sell)] as const;
+      })
+    )
   );
 
   return (
-    <section className="bg-white py-20 lg:py-28">
+    <section className="bg-surface py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl">
-          <p className="eyebrow">Today&apos;s L&amp;S Rates</p>
-          <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-            Today&apos;s Foreign Exchange Rates
-          </h2>
-          <p className="mt-4 text-lg leading-relaxed text-muted">
-            Check the latest L&amp;S Forex Bureau buying and selling rates before
-            visiting one of our branches.
-          </p>
-        </div>
-
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {rates.map((rate) => {
-            const t = trendMap.get(rate.currency.code) ?? { trend7: [], trend30: [] };
-            return (
-              <RateCard
-                key={rate.currency.code}
-                rate={rate}
-                trend7={t.trend7}
-                trend30={t.trend30}
-              />
-            );
-          })}
-        </div>
-
-        <div className="mt-12 flex flex-col items-center gap-5 text-center">
-          <Link href="/rates" className="btn btn-primary">
-            See All Exchange Rates
-          </Link>
-          <p className="max-w-xl text-xs leading-relaxed text-muted">
-            Rates are indicative and subject to change. Please contact or visit an
-            L&amp;S branch to confirm the final transaction rate.
-          </p>
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-xl">
+            <p className="eyebrow">Today&apos;s rates</p>
+            <h2 className="font-display mt-4 text-3xl leading-[1] text-foreground sm:text-[2.6rem]">
+              What we pay, what we charge
+            </h2>
+          </div>
           {lastUpdated && (
-            <>
-              <p className="flex items-center gap-2 text-sm text-muted">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="h-4 w-4">
-                  <circle cx="12" cy="12" r="9" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 7v5l3 2" />
-                </svg>
-                Last updated: {formatDateTime(lastUpdated)}
-              </p>
-              <span className="badge">Rates updated {timeAgo(lastUpdated)}</span>
-            </>
+            <p className="font-mono text-xs text-muted">Published {formatDateTime(lastUpdated)}</p>
           )}
+        </div>
+
+        <div className="mt-10 overflow-x-auto rounded-lg border border-primary/10 bg-white">
+          <table className="w-full min-w-[34rem] border-collapse text-left">
+            <caption className="sr-only">L&amp;S buying and selling rates in Tanzanian shillings</caption>
+            <thead>
+              <tr className="border-b border-primary/10 font-mono text-[11px] uppercase tracking-[0.06em] text-muted">
+                <th scope="col" className="px-5 py-4 font-medium sm:px-6">Currency</th>
+                <th scope="col" className="px-3 py-4 text-right font-medium">We buy</th>
+                <th scope="col" className="px-3 py-4 text-right font-medium">We sell</th>
+                <th scope="col" className="hidden px-3 py-4 text-right font-medium md:table-cell">Change</th>
+                <th scope="col" className="hidden px-5 py-4 text-right font-medium sm:px-6 md:table-cell">Last 7 days</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rates.map((rate) => (
+                <tr key={rate.currency.code} className="border-b border-primary/[0.07] last:border-0">
+                  <th scope="row" className="px-5 py-4 font-normal sm:px-6">
+                    <span className="font-display text-base text-foreground">{rate.currency.code}</span>
+                    <span className="ml-3 hidden text-sm text-muted sm:inline">{rate.currency.name}</span>
+                  </th>
+                  <td className="tabular px-3 py-4 text-right font-mono text-[15px] font-semibold">
+                    {formatRateNumber(rate.buyingRate)}
+                  </td>
+                  <td className="tabular px-3 py-4 text-right font-mono text-[15px] font-semibold">
+                    {formatRateNumber(rate.sellingRate)}
+                  </td>
+                  <td className="hidden px-3 py-4 text-right font-mono text-xs md:table-cell">
+                    <Change rate={rate} />
+                  </td>
+                  <td className="hidden px-5 py-4 text-primary sm:px-6 md:table-cell">
+                    <div className="flex justify-end">
+                      <Sparkline points={trends.get(rate.currency.code) ?? []} />
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <p className="max-w-xl text-sm text-muted">
+            TZS per unit of foreign currency. Indicative — your branch confirms the final rate.
+          </p>
+          <Link href="/rates" className="btn btn-dark">
+            Search all rates
+          </Link>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/rates";
+import Image from "next/image";
+import CallBand from "@/components/CallBand";
 
 export const metadata: Metadata = {
   title: "About L&S Forex Bureau",
@@ -8,130 +8,64 @@ export const metadata: Metadata = {
     "L&S Forex Bureau provides professional foreign currency exchange services to customers across Dar es Salaam.",
 };
 
-const APPROACH = [
-  {
-    title: "Transparency",
-    copy: "Clearly communicated buying and selling rates.",
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M2.25 12s3.75-6.75 9.75-6.75S21.75 12 21.75 12 18 18.75 12 18.75 2.25 12 2.25 12Z"
-      />
-    ),
-    extraIcon: <circle cx="12" cy="12" r="2.75" />,
-  },
-  {
-    title: "Convenience",
-    copy: "Multiple branches across Dar es Salaam.",
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M12 21s-7.5-5.6-7.5-11.25a7.5 7.5 0 0 1 15 0C19.5 15.4 12 21 12 21Z"
-      />
-    ),
-    extraIcon: <circle cx="12" cy="9.75" r="2.5" />,
-  },
-  {
-    title: "Professionalism",
-    copy: "Reliable service and proper transaction documentation.",
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-      />
-    ),
-    extraIcon: null,
-  },
-  {
-    title: "Customer Service",
-    copy: "A knowledgeable team available to help customers understand the exchange process.",
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5Z"
-      />
-    ),
-    extraIcon: null,
-  },
+const PRINCIPLES = [
+  ["Rates in the open", "Buying and selling rates are published here and at the counter before you commit."],
+  ["Four places to go", "Tegeta, Mbezi Beach, Mikocheni and Masaki, all working from the same rates."],
+  ["Paperwork done properly", "Every exchange is documented and you leave with a transaction receipt."],
+  ["People who explain", "Ask at the counter and our team will walk you through the exchange."],
 ];
 
 export default function AboutPage() {
   return (
     <>
-      {/* Hero band */}
-      <section className="bg-hero-mesh pt-34">
+      <section className="bg-primary pt-34 text-white">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-            About L&S
-          </p>
-          <h1 className="mt-3 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            A Trusted Name in Foreign Exchange
+          <p className="eyebrow eyebrow-light">About L&amp;S</p>
+          <h1 className="font-display mt-5 max-w-4xl text-4xl leading-[0.98] sm:text-6xl">
+            Currency exchange across Dar es Salaam
           </h1>
         </div>
       </section>
 
-      {/* About copy */}
-      <section className="bg-background py-20 lg:py-28">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <p className="text-lg leading-relaxed text-muted">
-            L&S Forex Bureau provides professional foreign currency exchange
-            services to customers across Dar es Salaam. With convenient
-            locations in Tegeta, Mbezi Beach, Mikocheni and Masaki, our focus
-            is simple: make exchanging currency straightforward, transparent
-            and convenient. Whether you are travelling, conducting business,
-            receiving foreign currency or preparing for an international trip,
-            our team is ready to assist you with current rates and
-            professional branch service.
-          </p>
-        </div>
-      </section>
+      <section className="bg-white py-20 lg:py-28">
+        <div className="mx-auto grid max-w-7xl gap-14 px-4 sm:px-6 lg:grid-cols-12 lg:gap-16 lg:px-8">
+          <div className="lg:col-span-7">
+            <p className="text-2xl leading-snug text-foreground">
+              L&amp;S Forex Bureau exchanges foreign currency for people and businesses
+              from four branches across Dar es Salaam.
+            </p>
+            <p className="mt-6 text-lg leading-relaxed text-muted">
+              Whether you are travelling, coming home, paying for business or
+              receiving money from abroad, the job is the same: give you a clear rate,
+              exchange your money properly, and get you on your way. That&apos;s why
+              every branch works from one set of published rates.
+            </p>
 
-      {/* Our approach */}
-      <section className="bg-surface py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-            How We Work
-          </p>
-          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Our Approach
-          </h2>
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {APPROACH.map((item) => (
-              <div key={item.title} className="border-l-2 border-primary pl-5">
-                <h3 className="font-display text-lg font-semibold text-foreground">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
-                  {item.copy}
-                </p>
-              </div>
-            ))}
+            <dl className="mt-12">
+              {PRINCIPLES.map(([title, copy]) => (
+                <div key={title} className="grid gap-1 border-t border-primary/12 py-5 sm:grid-cols-[14rem_1fr] sm:gap-8">
+                  <dt className="font-bold text-foreground">{title}</dt>
+                  <dd className="leading-relaxed text-muted">{copy}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
-        </div>
-      </section>
 
-      {/* CTA band */}
-      <section className="bg-background py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl bg-brand-gradient px-6 py-14 text-center sm:px-12 lg:py-20">
-            <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Need Foreign Currency Today?
-            </h2>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link href="/rates" className="btn btn-white">
-                Check Exchange Rates
-              </Link>
-              <a href={`tel:${PHONE_TEL}`} className="btn btn-ghost-light">
-                Call {PHONE_DISPLAY}
-              </a>
+          <div className="lg:col-span-5">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
+              <Image
+                src="/photos/harbor-dusk.jpg"
+                alt="Dar es Salaam harbour at dusk"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 40vw, 100vw"
+              />
             </div>
           </div>
         </div>
       </section>
+
+      <CallBand />
     </>
   );
 }

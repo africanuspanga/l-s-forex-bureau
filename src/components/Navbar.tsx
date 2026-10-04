@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
-  { href: "/rates", label: "Exchange Rates" },
+  { href: "/rates", label: "Rates" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/branches", label: "Branches" },
@@ -16,8 +16,10 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  // The menu belongs to the page it was opened on, so navigating closes it.
+  const [openOn, setOpenOn] = useState<string | null>(null);
+  const open = openOn === pathname;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -26,15 +28,11 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled || open
-          ? "bg-primary/95 backdrop-blur-md shadow-lg shadow-primary-deep/30"
+          ? "bg-primary"
           : "bg-primary"
       }`}
     >
@@ -62,7 +60,7 @@ export default function Navbar() {
                   }`}
                 >
                   {link.label}
-                  {active && <span className="absolute inset-x-0 -bottom-[1px] h-0.5 bg-accent" />}
+                  {active && <span className="absolute inset-x-0 -bottom-[1px] h-[3px] bg-accent" />}
                 </Link>
               </li>
             );
@@ -72,7 +70,7 @@ export default function Navbar() {
         <div className="hidden items-center gap-4 lg:flex">
           <a
             href="tel:+255743881309"
-            className="text-sm font-semibold text-white/90 transition-colors hover:text-white"
+            className="tabular font-mono text-[13px] font-semibold text-white/90 transition-colors hover:text-white"
           >
             0743 881 309
           </a>
@@ -84,8 +82,8 @@ export default function Navbar() {
         <button
           type="button"
           className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-white lg:hidden"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle navigation"
+          onClick={() => setOpenOn(open ? null : pathname)}
+          aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-6 w-6">
@@ -105,10 +103,10 @@ export default function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`block rounded-lg px-4 py-3 text-sm font-medium ${
+                  className={`block border-l-[3px] px-4 py-3 text-base font-semibold ${
                     pathname === link.href
-                      ? "bg-white/15 text-white"
-                      : "text-white/80 hover:bg-white/10"
+                      ? "border-accent text-white"
+                      : "border-transparent text-white/75 hover:text-white"
                   }`}
                 >
                   {link.label}
