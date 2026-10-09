@@ -12,7 +12,7 @@ export default function Hero({ rates }: HeroProps) {
       <div className="mx-auto grid max-w-7xl gap-14 px-4 pb-16 pt-14 sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-8 lg:pb-0 lg:pt-20">
         <div className="lg:col-span-7 lg:pb-24">
           <p className="eyebrow eyebrow-light">Tegeta · Mbezi Beach · Mikocheni · Masaki</p>
-          <h1 className="font-display mt-6 text-[2.6rem] leading-[0.95] sm:text-6xl lg:text-[4.6rem]">
+          <h1 className="font-display mt-6 text-[2.3rem] leading-[0.95] min-[360px]:text-[2.6rem] sm:text-6xl lg:text-[4.6rem]">
             Four branches.
             <br />
             <span className="text-accent">One set of rates.</span>

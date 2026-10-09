@@ -83,7 +83,7 @@ export default function RatesExplorer({ rates }: { rates: CurrencyRate[] }) {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search currency or code"
             aria-label="Search currencies"
-            className="w-full rounded-xl bg-white py-2.5 pl-10 pr-4 text-sm text-foreground ring-1 ring-primary/15 placeholder:text-muted/70 focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full rounded-xl bg-white py-2.5 pl-10 pr-4 text-base text-foreground sm:text-sm ring-1 ring-primary/15 placeholder:text-muted/70 focus:outline-none focus:ring-2 focus:ring-primary"
           />
         </div>
       </div>

@@ -19,7 +19,7 @@ interface FieldErrors {
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const inputClass =
-  "w-full rounded-xl bg-surface px-4 py-3 text-sm text-foreground ring-1 ring-primary/15 placeholder:text-muted/70 focus:outline-none focus:ring-2 focus:ring-primary";
+  "w-full rounded-xl bg-surface px-4 py-3 text-base text-foreground sm:text-sm ring-1 ring-primary/15 placeholder:text-muted/70 focus:outline-none focus:ring-2 focus:ring-primary";
 
 export default function ContactForm({ branches }: { branches: BranchOption[] }) {
   const [fullName, setFullName] = useState("");

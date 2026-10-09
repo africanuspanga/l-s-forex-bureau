@@ -57,6 +57,11 @@ body {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: -0.01em;
+  /* At wdth 125 a long word (STRAIGHTFORWARD) is wider than a phone; let it
+     hyphenate rather than push the page sideways. */
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 /* Legacy helpers, now flat: no gradients anywhere on this site. */
@@ -195,7 +200,8 @@ body {
   background: transparent;
   padding: 6px 0;
   font-family: var(--font-mono);
-  font-size: 0.875rem;
+  /* 16px minimum stops iOS Safari zooming in when a field is focused. */
+  font-size: 1rem;
   font-weight: 600;
   color: var(--color-primary-deep);
   outline: none;

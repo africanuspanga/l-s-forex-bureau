@@ -69,7 +69,7 @@ export default async function RatesSection({ rates, lastUpdated }: RatesSectionP
         </div>
 
         <div className="mt-10 overflow-x-auto rounded-lg border border-primary/10 bg-white">
-          <table className="w-full min-w-[34rem] border-collapse text-left">
+          <table className="w-full border-collapse md:min-w-[34rem] text-left">
             <caption className="sr-only">L&amp;S buying and selling rates in Tanzanian shillings</caption>
             <thead>
               <tr className="border-b border-primary/10 font-mono text-[11px] uppercase tracking-[0.06em] text-muted">
